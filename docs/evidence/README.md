@@ -8,6 +8,8 @@ Captured 2026-10-27. **Original on the left; migration on the right.**
 - [Motion checks](motion-results.json): intermediate hover/header animation values and masonry packing/resize checks.
 - [Desktop lightbox](lightbox-desktop.jpg) and [mobile lightbox](lightbox-mobile.jpg): transparent viewer, circular side arrows, and top-right X (local captures).
 - [Lightbox checks](lightbox-results.json): responsive geometry, navigation, closing, and focus/scroll restoration.
+- [Desktop navigation](navigation-desktop.jpg) and [orange compact menu](navigation-mobile.jpg): local captures of the restored horizontal navigation and updated overlay.
+- [Navigation checks](navigation-results.json): eleven viewport sizes, mode switching, keyboard behavior, scroll locks, and all 15 copyright lines.
 
 The local quote page shows its intentional unavailable message because no provider credentials are configured. That adds height to the form. The old credit appears only in the original-reference half; it is absent from the migrated application. Full-page captures do not reliably paint native fixed backgrounds outside the visible viewport, so those regions also need ordinary scrolling review.
 

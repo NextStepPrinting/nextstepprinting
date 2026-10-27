@@ -47,6 +47,7 @@ try{
     await clickAt(g.next.left+22,g.next.top+22);await imageReady();
     assert.notEqual(await b.evaluate(`document.querySelector('.nsp-lightbox img').src`),first);
     g=await geometry();checkGeometry(g);results.push({width,geometry:g});
+    const initialArrows={previous:g.previous,next:g.next};
     const shot=await b.send('Page.captureScreenshot',{format:'png'});
     await fs.writeFile(`docs/reference/lightbox/portrait-${width}.png`,Buffer.from(shot.data,'base64'));
     await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowLeft',code:'ArrowLeft',windowsVirtualKeyCode:37});await imageReady();
@@ -57,6 +58,8 @@ try{
     await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowRight',code:'ArrowRight',windowsVirtualKeyCode:39});await imageReady();
     assert.equal(await b.evaluate(`document.querySelector('.nsp-lightbox img').src`),first);
     g=await geometry();checkGeometry(g);
+    assert.deepEqual(g.previous,initialArrows.previous,'Previous target stays fixed between photos');
+    assert.deepEqual(g.next,initialArrows.next,'Next target stays fixed between photos');
     await clickAt(g.close.left+22,g.close.top+22);await pause(80);
     assert.equal(await b.evaluate(`document.querySelector('.nsp-lightbox').open`),false);
     assert.equal(await b.evaluate(`document.activeElement===window.testImageLink`),true,'Focus returns to clicked image');

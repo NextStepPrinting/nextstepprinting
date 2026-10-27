@@ -12,8 +12,27 @@ document.querySelectorAll('.zn-shareIcons').forEach(share=>{
   share.querySelector('.zn-shareIcons-item--gplus')?.remove();
   for(const [name,url] of Object.entries(destinations)){const link=share.querySelector('.zn-shareIcons-item--'+name);if(link){link.href=url;link.setAttribute('aria-label',link.title);if(name!=='mail'){link.target='_blank';link.rel='noopener noreferrer';}}}
 });
-let menuAnimation;
+// Keep this breakpoint in sync with the desktop-navigation rules in site.css.
+const wideMenu=window.matchMedia('(min-width:1100px)');
+let menuAnimation,menuPreviousOverflow='';
+const menuIsOpen=()=>!wideMenu.matches&&toggle.getAttribute('aria-expanded')==='true';
+function syncMenuMode(){
+  const wasOpen=toggle.getAttribute('aria-expanded')==='true';
+  const focusWasInMenu=menu.contains(document.activeElement);
+  menuAnimation?.cancel();
+  menu.hidden=!wideMenu.matches;
+  menu.inert=!wideMenu.matches;
+  toggle.setAttribute('aria-expanded','false');
+  toggle.setAttribute('aria-label','Open menu');
+  if(wasOpen)document.body.style.overflow=menuPreviousOverflow;
+  if(!wideMenu.matches&&focusWasInMenu)toggle.focus({preventScroll:true});
+  else if(wasOpen)menu.querySelector('a[aria-current]')?.focus({preventScroll:true});
+}
+wideMenu.addEventListener('change',syncMenuMode);
+syncMenuMode();
 function setMenu(open) {
+  if(wideMenu.matches)return;
+  if(open&&!menuIsOpen())menuPreviousOverflow=document.body.style.overflow;
   menuAnimation?.cancel();
   toggle?.setAttribute('aria-expanded',String(open));
   toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');
@@ -21,15 +40,15 @@ function setMenu(open) {
     menu.hidden=false;
     menu.inert=!open;
     menuAnimation=menu.animate([{opacity:open?0:1},{opacity:open?1:0}],{duration:180,easing:'ease-out'});
-    if(!open)menuAnimation.onfinish=()=>{menu.hidden=true;};
+    if(!open)menuAnimation.onfinish=()=>{if(!wideMenu.matches&&!menuIsOpen())menu.hidden=true;};
   }
-  document.body.style.overflow=open?'hidden':'';
+  document.body.style.overflow=open?'hidden':menuPreviousOverflow;
   if(open)menu.querySelector('a')?.focus();else toggle?.focus();
 }
 toggle?.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true')setMenu(false);
-  if(e.key==='Tab'&&toggle.getAttribute('aria-expanded')==='true'){
+  if(e.key==='Escape'&&menuIsOpen())setMenu(false);
+  if(e.key==='Tab'&&menuIsOpen()){
     const elements=[toggle,...menu.querySelectorAll('a')];
     const index=elements.indexOf(document.activeElement);
     if(e.shiftKey&&index===0){e.preventDefault();elements.at(-1).focus();}

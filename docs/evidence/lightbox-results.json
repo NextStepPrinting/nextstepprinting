@@ -18,24 +18,24 @@
           "left": 430.5
         },
         "previous": {
-          "x": 370.5,
+          "x": 16,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 414.5,
+          "right": 60,
           "bottom": 472,
-          "left": 370.5
+          "left": 16
         },
         "next": {
-          "x": 1025.5,
+          "x": 1380,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 1069.5,
+          "right": 1424,
           "bottom": 472,
-          "left": 1025.5
+          "left": 1380
         },
         "close": {
           "x": 1380,
@@ -74,24 +74,24 @@
           "left": 94.5
         },
         "previous": {
-          "x": 34.5,
+          "x": 16,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 78.5,
+          "right": 60,
           "bottom": 472,
-          "left": 34.5
+          "left": 16
         },
         "next": {
-          "x": 689.5,
+          "x": 708,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 733.5,
+          "right": 752,
           "bottom": 472,
-          "left": 689.5
+          "left": 708
         },
         "close": {
           "x": 708,
@@ -187,22 +187,22 @@
         },
         "previous": {
           "x": 4,
-          "y": 427.984375,
+          "y": 428,
           "width": 44,
           "height": 44,
-          "top": 427.984375,
+          "top": 428,
           "right": 48,
-          "bottom": 471.984375,
+          "bottom": 472,
           "left": 4
         },
         "next": {
           "x": 272,
-          "y": 427.984375,
+          "y": 428,
           "width": 44,
           "height": 44,
-          "top": 427.984375,
+          "top": 428,
           "right": 316,
-          "bottom": 471.984375,
+          "bottom": 472,
           "left": 272
         },
         "close": {
@@ -241,24 +241,24 @@
           "left": 139.546875
         },
         "previous": {
-          "x": 79.546875,
+          "x": 16,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 123.546875,
+          "right": 60,
           "bottom": 472,
-          "left": 79.546875
+          "left": 16
         },
         "next": {
-          "x": 1316.4375,
+          "x": 1380,
           "y": 428,
           "width": 44,
           "height": 44,
           "top": 428,
-          "right": 1360.4375,
+          "right": 1424,
           "bottom": 472,
-          "left": 1316.4375
+          "left": 1380
         },
         "close": {
           "x": 1380,

@@ -19,7 +19,9 @@ Edit `public/`, not generated `dist/`. Text, images, and links are directly edit
 
 Our Work uses a small masonry routine in `site.js`; its columns and animated positioning are styled in `site.css`. Original hover effects remain in the captured layout/component CSS. Small hover feedback remains enabled with reduced-motion preferences, while spatial transitions are shorter and automatic carousel movement is suppressed. Window scrolling stays native.
 
-The image viewer has a transparent stage over a dark backdrop, circular chevrons beside the image, a top-right X, and keyboard navigation. Its style is in the `.nsp-lightbox` rules in `site.css`.
+The image viewer has a transparent stage over a dark backdrop, circular chevrons fixed to the viewer's side rails, a top-right X, and keyboard navigation. Arrows stay at the same screen position between photos. Its style is in the `.nsp-lightbox` rules in `site.css`.
+
+Navigation shows all seven links on one row from 1100px upward and an orange overlay with bold charcoal text below that width. Keep the breakpoint synchronized between `site.css` and the `wideMenu` query in `site.js`. Mode changes restore the menu's scroll lock without disturbing an open image viewer. The shared copyright line ends at “All rights reserved” without a trailing period.
 
 ## Local commands
 
@@ -101,6 +103,8 @@ Wrangler 4.154.0 successfully compiled and served the migration locally. With th
 `node scripts/qa-motion.mjs` additionally verifies hover interpolation in both motion preferences, transparent/shrinking header states, gap-free masonry across breakpoints, animated resize/sort behavior, and immediate native scrolling.
 
 `node scripts/qa-lightbox.mjs` checks borderless viewer layout, controls at desktop/mobile widths, pointer/keyboard navigation, closing, and focus/scroll restoration.
+
+`node scripts/qa-navigation.mjs` checks desktop link fitting, the compact orange menu, mode changes/keyboard controls, and the copyright line on all 15 pages. An optional URL argument checks an approved remote review site instead of localhost.
 
 `scripts/inspect.mjs` and `scripts/import-original.mjs` are one-time provenance tools, **not build commands**. The importer overwrites HTML; never rerun it over edited pages. Ignored `docs/reference/` contains raw originals, 45 original screenshots, local comparisons, and detailed QA logs. Tracked page/asset inventories summarize the capture.
 

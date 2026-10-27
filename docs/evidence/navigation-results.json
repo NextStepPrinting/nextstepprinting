@@ -1,0 +1,1557 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "results": [
+    {
+      "width": 2200,
+      "initial": {
+        "width": 2200,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 124.25,
+          "y": 31,
+          "width": 554.46875,
+          "height": 123,
+          "top": 31,
+          "right": 678.71875,
+          "bottom": 154,
+          "left": 124.25
+        },
+        "nav": {
+          "x": 1451.78125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 2060.75,
+          "bottom": 109.59375,
+          "left": 1451.78125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 1451.78125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1512.703125,
+              "bottom": 109.59375,
+              "left": 1451.78125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 1516.703125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1578.734375,
+              "bottom": 109.59375,
+              "left": 1516.703125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 1582.734375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1659.421875,
+              "bottom": 109.59375,
+              "left": 1582.734375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 1663.421875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1749.59375,
+              "bottom": 109.59375,
+              "left": 1663.421875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 1753.59375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1877.8125,
+              "bottom": 109.59375,
+              "left": 1753.59375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 1881.8125,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1983.140625,
+              "bottom": 109.59375,
+              "left": 1881.8125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 1987.140625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 2060.75,
+              "bottom": 109.59375,
+              "left": 1987.140625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1920,
+      "initial": {
+        "width": 1920,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 110.25,
+          "y": 31,
+          "width": 554.46875,
+          "height": 123,
+          "top": 31,
+          "right": 664.71875,
+          "bottom": 154,
+          "left": 110.25
+        },
+        "nav": {
+          "x": 1185.78125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 1794.75,
+          "bottom": 109.59375,
+          "left": 1185.78125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 1185.78125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1246.703125,
+              "bottom": 109.59375,
+              "left": 1185.78125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 1250.703125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1312.734375,
+              "bottom": 109.59375,
+              "left": 1250.703125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 1316.734375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1393.421875,
+              "bottom": 109.59375,
+              "left": 1316.734375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 1397.421875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1483.59375,
+              "bottom": 109.59375,
+              "left": 1397.421875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 1487.59375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1611.8125,
+              "bottom": 109.59375,
+              "left": 1487.59375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 1615.8125,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1717.140625,
+              "bottom": 109.59375,
+              "left": 1615.8125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 1721.140625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1794.75,
+              "bottom": 109.59375,
+              "left": 1721.140625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1440,
+      "initial": {
+        "width": 1440,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 86.25,
+          "y": 31,
+          "width": 554.46875,
+          "height": 123,
+          "top": 31,
+          "right": 640.71875,
+          "bottom": 154,
+          "left": 86.25
+        },
+        "nav": {
+          "x": 729.78125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 1338.75,
+          "bottom": 109.59375,
+          "left": 729.78125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 729.78125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 790.703125,
+              "bottom": 109.59375,
+              "left": 729.78125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 794.703125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 856.734375,
+              "bottom": 109.59375,
+              "left": 794.703125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 860.734375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 937.421875,
+              "bottom": 109.59375,
+              "left": 860.734375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 941.421875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1027.59375,
+              "bottom": 109.59375,
+              "left": 941.421875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 1031.59375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1155.8125,
+              "bottom": 109.59375,
+              "left": 1031.59375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 1159.8125,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1261.140625,
+              "bottom": 109.59375,
+              "left": 1159.8125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 1265.140625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1338.75,
+              "bottom": 109.59375,
+              "left": 1265.140625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1280,
+      "initial": {
+        "width": 1280,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 78.25,
+          "y": 31,
+          "width": 475.53125,
+          "height": 123,
+          "top": 31,
+          "right": 553.78125,
+          "bottom": 154,
+          "left": 78.25
+        },
+        "nav": {
+          "x": 577.78125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 1186.75,
+          "bottom": 109.59375,
+          "left": 577.78125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 577.78125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 638.703125,
+              "bottom": 109.59375,
+              "left": 577.78125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 642.703125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 704.734375,
+              "bottom": 109.59375,
+              "left": 642.703125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 708.734375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 785.421875,
+              "bottom": 109.59375,
+              "left": 708.734375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 789.421875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 875.59375,
+              "bottom": 109.59375,
+              "left": 789.421875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 879.59375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1003.8125,
+              "bottom": 109.59375,
+              "left": 879.59375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 1007.8125,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1109.140625,
+              "bottom": 109.59375,
+              "left": 1007.8125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 1113.140625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1186.75,
+              "bottom": 109.59375,
+              "left": 1113.140625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1200,
+      "initial": {
+        "width": 1200,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 74.25,
+          "y": 31,
+          "width": 403.53125,
+          "height": 123,
+          "top": 31,
+          "right": 477.78125,
+          "bottom": 154,
+          "left": 74.25
+        },
+        "nav": {
+          "x": 501.78125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 1110.75,
+          "bottom": 109.59375,
+          "left": 501.78125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 501.78125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 562.703125,
+              "bottom": 109.59375,
+              "left": 501.78125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 566.703125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 628.734375,
+              "bottom": 109.59375,
+              "left": 566.703125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 632.734375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 709.421875,
+              "bottom": 109.59375,
+              "left": 632.734375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 713.421875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 799.59375,
+              "bottom": 109.59375,
+              "left": 713.421875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 803.59375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 927.8125,
+              "bottom": 109.59375,
+              "left": 803.59375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 931.8125,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1033.140625,
+              "bottom": 109.59375,
+              "left": 931.8125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 1037.140625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1110.75,
+              "bottom": 109.59375,
+              "left": 1037.140625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1100,
+      "initial": {
+        "width": 1100,
+        "hidden": false,
+        "inert": false,
+        "toggle": "none",
+        "expanded": "false",
+        "background": "rgba(0, 0, 0, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 31,
+          "width": 422.03125,
+          "height": 123,
+          "top": 31,
+          "right": 437.03125,
+          "bottom": 154,
+          "left": 15
+        },
+        "nav": {
+          "x": 461.03125,
+          "y": 75.40625,
+          "width": 608.96875,
+          "height": 34.1875,
+          "top": 75.40625,
+          "right": 1070,
+          "bottom": 109.59375,
+          "left": 461.03125
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 461.03125,
+              "y": 75.40625,
+              "width": 60.921875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 521.953125,
+              "bottom": 109.59375,
+              "left": 461.03125
+            },
+            "weight": "700",
+            "color": "rgb(255, 255, 255)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 525.953125,
+              "y": 75.40625,
+              "width": 62.03125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 587.984375,
+              "bottom": 109.59375,
+              "left": 525.953125
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 591.984375,
+              "y": 75.40625,
+              "width": 76.6875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 668.671875,
+              "bottom": 109.59375,
+              "left": 591.984375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 672.671875,
+              "y": 75.40625,
+              "width": 86.171875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 758.84375,
+              "bottom": 109.59375,
+              "left": 672.671875
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 762.84375,
+              "y": 75.40625,
+              "width": 124.21875,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 887.0625,
+              "bottom": 109.59375,
+              "left": 762.84375
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 891.0625,
+              "y": 75.40625,
+              "width": 101.328125,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 992.390625,
+              "bottom": 109.59375,
+              "left": 891.0625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 996.390625,
+              "y": 75.40625,
+              "width": 73.609375,
+              "height": 34.1875,
+              "top": 75.40625,
+              "right": 1070,
+              "bottom": 109.59375,
+              "left": 996.390625
+            },
+            "weight": "700",
+            "color": "rgb(238, 238, 238)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1099,
+      "initial": {
+        "width": 1099,
+        "hidden": true,
+        "inert": true,
+        "toggle": "block",
+        "expanded": "false",
+        "background": "rgb(255, 126, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 31,
+          "width": 554.46875,
+          "height": 123,
+          "top": 31,
+          "right": 569.46875,
+          "bottom": 154,
+          "left": 15
+        },
+        "nav": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 1024,
+      "initial": {
+        "width": 1024,
+        "hidden": true,
+        "inert": true,
+        "toggle": "block",
+        "expanded": "false",
+        "background": "rgb(255, 126, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 31,
+          "width": 554.46875,
+          "height": 123,
+          "top": 31,
+          "right": 569.46875,
+          "bottom": 154,
+          "left": 15
+        },
+        "nav": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 768,
+      "initial": {
+        "width": 768,
+        "hidden": true,
+        "inert": true,
+        "toggle": "block",
+        "expanded": "false",
+        "background": "rgb(255, 126, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 31,
+          "width": 542.25,
+          "height": 123,
+          "top": 31,
+          "right": 557.25,
+          "bottom": 154,
+          "left": 15
+        },
+        "nav": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 390,
+      "initial": {
+        "width": 390,
+        "hidden": true,
+        "inert": true,
+        "toggle": "block",
+        "expanded": "false",
+        "background": "rgb(255, 126, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 20,
+          "width": 180,
+          "height": 51.359375,
+          "top": 20,
+          "right": 195,
+          "bottom": 71.359375,
+          "left": 15
+        },
+        "nav": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    },
+    {
+      "width": 320,
+      "initial": {
+        "width": 320,
+        "hidden": true,
+        "inert": true,
+        "toggle": "block",
+        "expanded": "false",
+        "background": "rgb(255, 126, 0)",
+        "overflow": "",
+        "logo": {
+          "x": 15,
+          "y": 20,
+          "width": 180,
+          "height": 51.359375,
+          "top": 20,
+          "right": 195,
+          "bottom": 71.359375,
+          "left": 15
+        },
+        "nav": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "links": [
+          {
+            "text": "Home",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(17, 17, 17)"
+          },
+          {
+            "text": "About",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Services",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Our Work",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Graphic Design",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Get a Quote",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          },
+          {
+            "text": "Contact",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "weight": "700",
+            "color": "rgb(29, 29, 29)"
+          }
+        ],
+        "active": "Home",
+        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+      }
+    }
+  ],
+  "errors": []
+}

@@ -16,13 +16,24 @@ body { overflow-x:hidden; }
 .nsp-menu-toggle { border:0; background:none; color:#aaa; padding:14px; cursor:pointer; transition:color .2s ease-out; }
 .nsp-menu-toggle:hover { color:#fff; }
 .nsp-menu-toggle span { display:block; height:2px; width:19px; background:currentColor; margin:4px 0; transition:transform .2s ease-out,opacity .2s ease-out; }
-#nsp-menu { position:fixed; inset:0; overflow-y:auto; background:#f5f5f5; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:18px; padding:70px 25px; }
-#nsp-menu a { font:700 clamp(22px,4vw,38px)/1.2 Montserrat,sans-serif; color:#333; transition:color .2s ease-out; }
-#nsp-menu a:hover,#nsp-menu a[aria-current] { color:#ff7e00; }
+#nsp-menu { position:fixed; inset:0; overflow-y:auto; background:#ff7e00; display:flex; flex-direction:column; justify-content:center; justify-content:safe center; align-items:center; gap:18px; padding:70px 25px; }
+#nsp-menu a { display:block; padding:4px 12px; border-radius:3px; font:700 clamp(22px,3.4vw,34px)/1.25 Montserrat,sans-serif; color:#1d1d1d; text-transform:uppercase; letter-spacing:.06em; transition:color .2s ease-out,background-color .2s ease-out; }
+#nsp-menu a:hover,#nsp-menu a[aria-current] { color:#111; background:#ffffff2e; }
+#nsp-menu a[aria-current] { text-decoration:underline; text-underline-offset:7px; text-decoration-thickness:2px; }
+#nsp-menu a:focus-visible { outline-color:#1d1d1d; }
 .nsp-menu-toggle[aria-expanded=true] { position:fixed; top:25px; right:25px; z-index:102; color:#333; }
 .nsp-menu-toggle[aria-expanded=true] span:first-child { transform:translateY(6px) rotate(45deg); }
 .nsp-menu-toggle[aria-expanded=true] span:nth-child(2) { opacity:0; }
 .nsp-menu-toggle[aria-expanded=true] span:last-child { transform:translateY(-6px) rotate(-45deg); }
+@media(min-width:1100px) {
+  .nsp-header-inner { gap:24px; }
+  .nsp-logo { min-width:0; flex-shrink:1; }
+  .nsp-menu-toggle { display:none; }
+  #nsp-menu { position:static; inset:auto; flex:0 0 auto; flex-direction:row; gap:4px; padding:0; background:transparent; overflow:visible; }
+  #nsp-menu a { padding:8px 10px; font-size:13px; line-height:1.4; text-transform:none; letter-spacing:0; color:#eee; white-space:nowrap; }
+  #nsp-menu a:hover,#nsp-menu a[aria-current] { color:#fff; background:#ff7e00; text-decoration:none; }
+  #nsp-menu a:focus-visible { outline-color:#ff7e00; }
+}
 .skip-link { position:fixed; left:10px; top:-100px; z-index:200; padding:12px; background:#fff; color:#111; }
 .skip-link:focus { top:10px; }
 :focus-visible { outline:2px solid #ff7e00; outline-offset:4px; }
@@ -48,18 +59,18 @@ body { overflow-x:hidden; }
 .nsp-lightbox img { display:block; width:auto; height:auto; max-width:calc(100vw - 152px); max-height:calc(100vh - 128px); max-height:calc(100dvh - 128px); object-fit:contain; }
 .nsp-lightbox button { display:grid; place-items:center; width:44px; height:44px; padding:0; color:inherit; cursor:pointer; transition:background-color .18s ease-out,border-color .18s ease-out; }
 .nsp-lightbox button svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
-.nsp-lightbox-arrow { position:absolute; top:calc(50% - 22px); border:1px solid #ffffff40; border-radius:50%; background:#ffffff0d; }
+.nsp-lightbox-arrow { position:fixed; top:calc(50% - 22px); border:1px solid #ffffff40; border-radius:50%; background:#ffffff0d; }
 .nsp-lightbox-arrow:hover { background:#ffffff26; border-color:#ffffff80; }
-.nsp-lightbox [data-prev] { left:-60px; }
-.nsp-lightbox [data-next] { right:-60px; }
+.nsp-lightbox [data-prev] { left:16px; }
+.nsp-lightbox [data-next] { right:16px; }
 .nsp-lightbox .nsp-close { position:fixed; top:16px; right:16px; border:0; border-radius:50%; background:transparent; }
 .nsp-lightbox .nsp-close:hover { background:#ffffff1a; }
 .nsp-lightbox-count { position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:12px; color:#ffffffa6; font:400 12px/1.5 Montserrat,sans-serif; white-space:nowrap; }
 @media(max-width:600px) {
   .nsp-lightbox { padding-right:56px; padding-left:56px; }
   .nsp-lightbox img { max-width:calc(100vw - 112px); }
-  .nsp-lightbox [data-prev] { left:-52px; }
-  .nsp-lightbox [data-next] { right:-52px; }
+  .nsp-lightbox [data-prev] { left:4px; }
+  .nsp-lightbox [data-next] { right:4px; }
 }
 .nsp-honeypot { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
 .cf-elm input[type=tel] { max-width:100%; margin-bottom:15px; }
