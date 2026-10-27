@@ -13,3 +13,13 @@ This is an authorized, faithful migration of https://nextstepprinting.com/ to Cl
 - Before committing, inspect the diff for secrets and provider dependencies. Verify local pages, links, assets, responsive layouts, browser console, and forms. Distinguish verified results from pending or blocked checks.
 
 The repository began empty. `migration-base` contains an empty root commit for review; `feature/website-migration` is the working branch. No production branch or deployment has been established by this migration.
+
+## Implemented structure
+
+- Edit `public/` HTML, `public/assets/styles/site.css`, and `public/assets/site.js`; generated `dist/` is ignored. A dependency-free Node build copies source files for Pages.
+- Root `functions/api/` contains Pages Functions. Sender/recipient come only from server configuration. Inject/intercept Turnstile and Resend in tests; never use real sending keys to test.
+- Run `npm run check`, `npm test`, and `npm run build`. Windows fallback: `powershell -ExecutionPolicy Bypass -File scripts/dev.ps1 <check|test|build|dev>` uses VS Code's runtime when Node is missing from PATH.
+- Provenance: `docs/page-inventory.json`, `docs/asset-inventory.json`, and `docs/migration-status.md`. Raw captures/browser evidence in `docs/reference/` are ignored.
+- `scripts/import-original.mjs` is a one-time tool that overwrites source HTML; never rerun it over user edits. It is not a build step.
+- Retained CSS classes preserve appearance without WordPress runtime dependencies. Preserve license notices. Shared header/footer edits currently require updating all 15 pages.
+- Windows/Edge QA helpers are development tools, not hosted dependencies. Keep portable tooling, browser profiles, and logs ignored.
