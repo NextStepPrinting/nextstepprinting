@@ -10,6 +10,7 @@ Captured 2026-10-27. **Original on the left; migration on the right.**
 - [Lightbox checks](lightbox-results.json): responsive geometry, navigation, closing, and focus/scroll restoration.
 - [Desktop navigation](navigation-desktop.jpg) and [orange compact menu](navigation-mobile.jpg): local captures of the restored horizontal navigation and updated overlay.
 - [Navigation checks](navigation-results.json): eleven viewport sizes, mode switching, keyboard behavior, scroll locks, and all 15 copyright lines.
+- [Contact details strip](contact-strip.jpg): white email text matching the other details on orange. Navigation checks also record white compact-menu text and intermediate center-out underline values.
 
 The local quote page shows its intentional unavailable message because no provider credentials are configured. That adds height to the form. The old credit appears only in the original-reference half; it is absent from the migrated application. Full-page captures do not reliably paint native fixed backgrounds outside the visible viewport, so those regions also need ordinary scrolling review.
 

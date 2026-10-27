@@ -13,14 +13,17 @@ body { overflow-x:hidden; }
 .nsp-stuck .nsp-logo { width:215.24px; }
 .nsp-stuck .nsp-logo img { height:60px; }
 .znpb-footer-smart-area a[href^="mailto:"] { color:inherit; }
+/* Contact page's orange contact-details strip. */
+#eluiddc2f4b0b a[href^="mailto:"] { color:#fff; }
 .nsp-menu-toggle { border:0; background:none; color:#aaa; padding:14px; cursor:pointer; transition:color .2s ease-out; }
 .nsp-menu-toggle:hover { color:#fff; }
 .nsp-menu-toggle span { display:block; height:2px; width:19px; background:currentColor; margin:4px 0; transition:transform .2s ease-out,opacity .2s ease-out; }
 #nsp-menu { position:fixed; inset:0; overflow-y:auto; background:#ff7e00; display:flex; flex-direction:column; justify-content:center; justify-content:safe center; align-items:center; gap:18px; padding:70px 25px; }
-#nsp-menu a { display:block; padding:4px 12px; border-radius:3px; font:700 clamp(22px,3.4vw,34px)/1.25 Montserrat,sans-serif; color:#1d1d1d; text-transform:uppercase; letter-spacing:.06em; transition:color .2s ease-out,background-color .2s ease-out; }
-#nsp-menu a:hover,#nsp-menu a[aria-current] { color:#111; background:#ffffff2e; }
-#nsp-menu a[aria-current] { text-decoration:underline; text-underline-offset:7px; text-decoration-thickness:2px; }
-#nsp-menu a:focus-visible { outline-color:#1d1d1d; }
+#nsp-menu a { position:relative; display:block; padding:4px 12px; border-radius:3px; font:700 clamp(22px,3.4vw,34px)/1.25 Montserrat,sans-serif; color:#fff; background:transparent; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; transition:color .2s ease-out,background-color .2s ease-out; }
+#nsp-menu a:hover,#nsp-menu a[aria-current] { color:#fff; background:transparent; }
+#nsp-menu a::after { content:""; position:absolute; left:12px; right:12px; bottom:0; height:2px; background:currentColor; transform:scaleX(0); transform-origin:center; transition:transform .25s ease-out; }
+#nsp-menu a:hover::after,#nsp-menu a:focus-visible::after { transform:scaleX(1); }
+#nsp-menu a:focus-visible { outline-color:#fff; }
 .nsp-menu-toggle[aria-expanded=true] { position:fixed; top:25px; right:25px; z-index:102; color:#333; }
 .nsp-menu-toggle[aria-expanded=true] span:first-child { transform:translateY(6px) rotate(45deg); }
 .nsp-menu-toggle[aria-expanded=true] span:nth-child(2) { opacity:0; }
@@ -32,6 +35,7 @@ body { overflow-x:hidden; }
   #nsp-menu { position:static; inset:auto; flex:0 0 auto; flex-direction:row; gap:4px; padding:0; background:transparent; overflow:visible; }
   #nsp-menu a { padding:8px 10px; font-size:13px; line-height:1.4; text-transform:none; letter-spacing:0; color:#eee; white-space:nowrap; }
   #nsp-menu a:hover,#nsp-menu a[aria-current] { color:#fff; background:#ff7e00; text-decoration:none; }
+  #nsp-menu a::after { display:none; }
   #nsp-menu a:focus-visible { outline-color:#ff7e00; }
 }
 .skip-link { position:fixed; left:10px; top:-100px; z-index:200; padding:12px; background:#fff; color:#111; }

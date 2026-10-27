@@ -21,7 +21,7 @@ Our Work uses a small masonry routine in `site.js`; its columns and animated pos
 
 The image viewer has a transparent stage over a dark backdrop, circular chevrons fixed to the viewer's side rails, a top-right X, and keyboard navigation. Arrows stay at the same screen position between photos. Its style is in the `.nsp-lightbox` rules in `site.css`.
 
-Navigation shows all seven links on one row from 1100px upward and an orange overlay with bold charcoal text below that width. Keep the breakpoint synchronized between `site.css` and the `wideMenu` query in `site.js`. Mode changes restore the menu's scroll lock without disturbing an open image viewer. The shared copyright line ends at “All rights reserved” without a trailing period.
+Navigation shows all seven links on one row from 1100px upward and an orange overlay with bold white text below that width. Compact-menu hover/focus draws an underline outward from the center without a background highlight. Keep the breakpoint synchronized between `site.css` and the `wideMenu` query in `site.js`. Mode changes restore the menu's scroll lock without disturbing an open image viewer. The shared copyright line ends at “All rights reserved” without a trailing period.
 
 ## Local commands
 

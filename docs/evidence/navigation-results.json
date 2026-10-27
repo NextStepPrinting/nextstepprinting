@@ -891,7 +891,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(17, 17, 17)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "About",
@@ -906,7 +906,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Services",
@@ -921,7 +921,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Our Work",
@@ -936,7 +936,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Graphic Design",
@@ -951,7 +951,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Get a Quote",
@@ -966,7 +966,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Contact",
@@ -981,7 +981,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           }
         ],
         "active": "Home",
@@ -1032,7 +1032,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(17, 17, 17)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "About",
@@ -1047,7 +1047,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Services",
@@ -1062,7 +1062,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Our Work",
@@ -1077,7 +1077,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Graphic Design",
@@ -1092,7 +1092,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Get a Quote",
@@ -1107,7 +1107,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Contact",
@@ -1122,7 +1122,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           }
         ],
         "active": "Home",
@@ -1173,7 +1173,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(17, 17, 17)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "About",
@@ -1188,7 +1188,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Services",
@@ -1203,7 +1203,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Our Work",
@@ -1218,7 +1218,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Graphic Design",
@@ -1233,7 +1233,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Get a Quote",
@@ -1248,7 +1248,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Contact",
@@ -1263,7 +1263,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           }
         ],
         "active": "Home",
@@ -1314,7 +1314,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(17, 17, 17)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "About",
@@ -1329,7 +1329,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Services",
@@ -1344,7 +1344,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Our Work",
@@ -1359,7 +1359,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Graphic Design",
@@ -1374,7 +1374,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Get a Quote",
@@ -1389,7 +1389,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Contact",
@@ -1404,7 +1404,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           }
         ],
         "active": "Home",
@@ -1455,7 +1455,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(17, 17, 17)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "About",
@@ -1470,7 +1470,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Services",
@@ -1485,7 +1485,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Our Work",
@@ -1500,7 +1500,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Graphic Design",
@@ -1515,7 +1515,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Get a Quote",
@@ -1530,7 +1530,7 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           },
           {
             "text": "Contact",
@@ -1545,12 +1545,76 @@
               "left": 0
             },
             "weight": "700",
-            "color": "rgb(29, 29, 29)"
+            "color": "rgb(255, 255, 255)"
           }
         ],
         "active": "Home",
         "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
       }
+    }
+  ],
+  "hoverResults": [
+    {
+      "width": 1099,
+      "before": {
+        "scale": 0,
+        "width": 138.281,
+        "origin": 69.1406,
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "during": {
+        "scale": 0.30869,
+        "width": 138.281,
+        "origin": 69.1406,
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "after": {
+        "scale": 1,
+        "width": 138.281,
+        "origin": 69.1406,
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "width": 390,
+      "before": {
+        "scale": 0,
+        "width": 89.4844,
+        "origin": 44.7422,
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "during": {
+        "scale": 0.308372,
+        "width": 89.4844,
+        "origin": 44.7422,
+        "background": "rgba(0, 0, 0, 0)"
+      },
+      "after": {
+        "scale": 1,
+        "width": 89.4844,
+        "origin": 44.7422,
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    }
+  ],
+  "contact": [
+    {
+      "width": 1440,
+      "color": "rgb(255, 255, 255)",
+      "href": "mailto:info@nextstepprinting.com",
+      "otherEmailColor": "rgb(0, 0, 0)"
+    },
+    {
+      "width": 768,
+      "color": "rgb(255, 255, 255)",
+      "href": "mailto:info@nextstepprinting.com",
+      "otherEmailColor": "rgb(0, 0, 0)"
+    },
+    {
+      "width": 390,
+      "color": "rgb(255, 255, 255)",
+      "href": "mailto:info@nextstepprinting.com",
+      "otherEmailColor": "rgb(0, 0, 0)"
     }
   ],
   "errors": []

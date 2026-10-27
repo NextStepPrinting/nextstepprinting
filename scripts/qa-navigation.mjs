@@ -4,6 +4,7 @@ import {browser} from './browser.mjs';
 const b=await browser(9340);
 const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const results=[];
+const hoverResults=[];
 const base=process.argv[2]||'http://127.0.0.1:4173';
 await fs.mkdir('docs/reference/navigation',{recursive:true});
 
@@ -26,6 +27,7 @@ function checkRow(s){
 }
 
 try{
+  await b.send('DOM.enable');await b.send('CSS.enable');
   await size(1440);await b.send('Page.navigate',{url:base+'/'});await pause(600);await b.evaluate('document.fonts.ready');
   for(const width of [2200,1920,1440,1280,1200,1100,1099,1024,768,390,320]){
     await size(width);await b.evaluate('scrollTo(0,0)');await pause(250);
@@ -40,7 +42,20 @@ try{
       await b.evaluate(`document.querySelector('.nsp-menu-toggle').click()`);await pause(220);
       const open=await state();
       assert.equal(open.background,'rgb(255, 126, 0)');assert.equal(open.hidden,false);assert.equal(open.inert,false);assert.equal(open.overflow,'hidden');
-      for(const link of open.links){assert.ok(['rgb(29, 29, 29)','rgb(17, 17, 17)'].includes(link.color));assert.equal(link.weight,'700');assert.ok(link.rect.left>=0&&link.rect.right<=width,'Overlay links fit');}
+      for(const link of open.links){assert.equal(link.color,'rgb(255, 255, 255)');assert.equal(link.weight,'700');assert.ok(link.rect.left>=0&&link.rect.right<=width,'Overlay links fit');}
+      if(width===1099||width===390){
+        const {root}=await b.send('DOM.getDocument');
+        const {nodeId}=await b.send('DOM.querySelector',{nodeId:root.nodeId,selector:'#nsp-menu a[href="/about/"]'});
+        const read=`(()=>{const e=document.querySelector('#nsp-menu a[href="/about/"]');const s=getComputedStyle(e,'::after');return {scale:new DOMMatrixReadOnly(s.transform).a,width:parseFloat(s.width),origin:parseFloat(s.transformOrigin),background:getComputedStyle(e).backgroundColor};})()`;
+        const before=await b.evaluate(read);
+        await b.send('CSS.forcePseudoState',{nodeId,forcedPseudoClasses:['hover']});await pause(60);
+        const during=await b.evaluate(read);await pause(280);const after=await b.evaluate(read);
+        assert.equal(before.scale,0);assert.ok(during.scale>0&&during.scale<1,'Underline animates');assert.equal(after.scale,1);
+        assert.ok(Math.abs(after.origin-after.width/2)<1,'Underline expands from its center');
+        assert.equal(after.background,'rgba(0, 0, 0, 0)','No hover highlight');
+        hoverResults.push({width,before,during,after});
+        await b.send('CSS.forcePseudoState',{nodeId,forcedPseudoClasses:[]});
+      }
       if(width===390){const shot=await b.send('Page.captureScreenshot',{format:'png'});await fs.writeFile('docs/reference/navigation/orange-menu-390.png',Buffer.from(shot.data,'base64'));}
       await b.evaluate(`document.querySelector('#nsp-menu a:last-child').focus()`);
       await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
@@ -64,8 +79,22 @@ try{
     await b.send('Page.navigate',{url:base+route});await pause(150);
     assert.match((await state()).copyright,/all rights reserved$/i,route+' copyright');
   }
+  await b.send('Page.navigate',{url:base+'/contact/'});await pause(500);
+  const contact=[];
+  for(const width of [1440,768,390]){
+    await size(width);
+    const email=await b.evaluate(`(()=>{const a=document.querySelector('#eluiddc2f4b0b a[href^="mailto:"]');return {color:getComputedStyle(a).color,href:a.getAttribute('href'),otherEmailColor:getComputedStyle(document.querySelector('.eluid9a6dd8cb a')).color};})()`);
+    assert.equal(email.color,'rgb(255, 255, 255)');assert.equal(email.href,'mailto:info@nextstepprinting.com');
+    assert.notEqual(email.otherEmailColor,'rgb(255, 255, 255)','Lower email stays readable on its light background');
+    contact.push({width,...email});
+    if(width===1440){
+      const rect=await b.evaluate(`(()=>{const r=document.querySelector('#eluiddc2f4b0b').getBoundingClientRect();return {x:r.x,y:r.y+scrollY,width:r.width,height:r.height,scale:1};})()`);
+      const shot=await b.send('Page.captureScreenshot',{format:'png',clip:rect,captureBeyondViewport:true});
+      await fs.writeFile('docs/reference/navigation/contact-strip.png',Buffer.from(shot.data,'base64'));
+    }
+  }
   assert.equal(b.errors.length,0,JSON.stringify(b.errors));
   const filename=base.startsWith('http://127.')?'docs/evidence/navigation-results.json':'docs/reference/live-navigation-results.json';
-  await fs.writeFile(filename,JSON.stringify({base,results,errors:b.errors},null,2)+'\n');
-  console.log('PASS: horizontal menu fits at 1100–2200px, orange bold overlay at 320–1099px, keyboard/resize/scroll-lock behavior, and clean copyright on all 15 pages.');
+  await fs.writeFile(filename,JSON.stringify({base,results,hoverResults,contact,errors:b.errors},null,2)+'\n');
+  console.log('PASS: horizontal/compact navigation, white bold overlay text, center-out hover underline without highlighting, keyboard/resize/scroll locks, contact-strip email, and all footer endings.');
 }finally{await b.close();}
