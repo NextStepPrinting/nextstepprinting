@@ -8,6 +8,8 @@
 - There are no configured Resend secret or runtime-variable bindings in this environment. No credentials from another project were reused.
 - A request to `https://nextstepprinting.com/` failed at the environment proxy's CONNECT step with HTTP 403. This is a network-policy blocker, not evidence that the website is down.
 - GitHub CLI API access is also blocked by policy. Git transport access does not imply GitHub API access.
+- The user confirmed that recipient and verified sender addresses will be supplied after the site is built and before DNS changes. These are deployment prerequisites, not blockers for independent implementation or isolated tests.
+- `migration-base` and `feature/website-migration` have been pushed. They contain an empty review base and preliminary documentation only.
 
 ## Configuration awaiting activation
 
@@ -31,6 +33,6 @@ Saving the draft does not activate it or publish the environment. After the user
 - Document exact source paths, editing guidance, local commands, and Cloudflare Pages/Functions configuration.
 - Run isolated form tests without sending real email, then validate every local route/asset/link and representative responsive screenshots against the original.
 - Check console errors, native scrolling, immediate navigation, and absence of Movement Garage dependencies.
-- Push the feature branch and create a draft pull request when the work is reviewable and API access allows.
+- Continue pushing implementation commits on the feature branch and create a draft pull request when API access allows.
 
 No original pages or assets have been retrieved, no website implementation has been validated, and no production action has been taken. The migration is not complete.
