@@ -24,7 +24,7 @@ body { overflow-x:hidden; }
 #nsp-menu a::after { content:""; position:absolute; left:12px; right:12px; bottom:0; height:2px; background:currentColor; transform:scaleX(0); transform-origin:center; transition:transform .25s ease-out; }
 #nsp-menu a:hover::after,#nsp-menu a:focus-visible::after { transform:scaleX(1); }
 #nsp-menu a:focus-visible { outline-color:#fff; }
-.nsp-menu-toggle[aria-expanded=true] { position:fixed; top:25px; right:25px; z-index:102; color:#333; }
+.nsp-menu-toggle[aria-expanded=true] { position:fixed; top:25px; right:25px; z-index:102; color:#fff; }
 .nsp-menu-toggle[aria-expanded=true] span:first-child { transform:translateY(6px) rotate(45deg); }
 .nsp-menu-toggle[aria-expanded=true] span:nth-child(2) { opacity:0; }
 .nsp-menu-toggle[aria-expanded=true] span:last-child { transform:translateY(-6px) rotate(-45deg); }
