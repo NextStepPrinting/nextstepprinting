@@ -1,6 +1,6 @@
 const toggle = document.querySelector('.nsp-menu-toggle');
 const menu = document.querySelector('#nsp-menu');
-const updateHeader=()=>document.body.classList.toggle('nsp-stuck',window.scrollY>185);
+const updateHeader=()=>document.body.classList.toggle('nsp-stuck',window.scrollY>1);
 window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
 const currentDate=document.querySelector('#current-date');
 if(currentDate)currentDate.textContent=new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric'}).format(new Date());
@@ -12,17 +12,24 @@ document.querySelectorAll('.zn-shareIcons').forEach(share=>{
   share.querySelector('.zn-shareIcons-item--gplus')?.remove();
   for(const [name,url] of Object.entries(destinations)){const link=share.querySelector('.zn-shareIcons-item--'+name);if(link){link.href=url;link.setAttribute('aria-label',link.title);if(name!=='mail'){link.target='_blank';link.rel='noopener noreferrer';}}}
 });
+let menuAnimation;
 function setMenu(open) {
+  menuAnimation?.cancel();
   toggle?.setAttribute('aria-expanded',String(open));
   toggle?.setAttribute('aria-label',open?'Close menu':'Open menu');
-  if(menu)menu.hidden=!open;
+  if(menu){
+    menu.hidden=false;
+    menu.inert=!open;
+    menuAnimation=menu.animate([{opacity:open?0:1},{opacity:open?1:0}],{duration:180,easing:'ease-out'});
+    if(!open)menuAnimation.onfinish=()=>{menu.hidden=true;};
+  }
   document.body.style.overflow=open?'hidden':'';
   if(open)menu.querySelector('a')?.focus();else toggle?.focus();
 }
-toggle?.addEventListener('click',()=>setMenu(menu.hidden));
+toggle?.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&!menu.hidden)setMenu(false);
-  if(e.key==='Tab'&&!menu.hidden){
+  if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true')setMenu(false);
+  if(e.key==='Tab'&&toggle.getAttribute('aria-expanded')==='true'){
     const elements=[toggle,...menu.querySelectorAll('a')];
     const index=elements.indexOf(document.activeElement);
     if(e.shiftKey&&index===0){e.preventDefault();elements.at(-1).focus();}
@@ -32,7 +39,7 @@ document.addEventListener('keydown',e=>{
 // Native horizontal scrolling with explicit controls replaces Slick.
 document.querySelectorAll('.js-slick').forEach(list=>{
   const controls=document.createElement('div');controls.className='nsp-carousel-controls';
-  const move=direction=>{const end=list.scrollWidth-list.clientWidth;let x=list.scrollLeft+direction*(list.firstElementChild?.clientWidth||list.clientWidth);if(x>end+5)x=0;if(x<0)x=end;list.scrollTo({left:x,behavior:'instant'});};
+  const move=direction=>{const end=list.scrollWidth-list.clientWidth;let x=list.scrollLeft+direction*(list.firstElementChild?.clientWidth||list.clientWidth);if(x>end+5)x=0;if(x<0)x=end;list.scrollTo({left:x,behavior:'smooth'});};
   for(const [label,direction] of [['Previous',-1],['Next',1]]){
     const button=document.createElement('button');button.type='button';button.textContent=direction<0?'‹':'›';button.setAttribute('aria-label',label+' projects');
     button.addEventListener('click',()=>move(direction));controls.append(button);
@@ -40,9 +47,44 @@ document.querySelectorAll('.js-slick').forEach(list=>{
   const nav=list.closest('.recentwork_carousel')?.querySelector('.znSlickNav');if(nav)nav.append(controls);else list.after(controls);
   if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!document.hidden&&!list.matches(':hover')&&!list.parentElement.matches(':focus-within'))move(1);},5000);
 });
+// Place each card in the shortest column, like the original masonry gallery.
+// Only card transforms animate; the document's wheel/touch scrolling stays native.
+function createMasonry(list) {
+  let frame;
+  let lastWidth=0;
+  const layout=()=>{
+    const columns=Number(getComputedStyle(list).getPropertyValue('--gallery-columns'))||4;
+    const width=list.clientWidth/columns;
+    const heights=Array(columns).fill(0);
+    for(const card of list.children){
+      const column=heights.indexOf(Math.min(...heights));
+      card.style.transform=`translate(${column*width}px, ${heights[column]}px)`;
+      heights[column]+=card.getBoundingClientRect().height+20;
+    }
+    list.style.height=`${Math.max(...heights)}px`;
+  };
+  const schedule=()=>{
+    cancelAnimationFrame(frame);
+    frame=requestAnimationFrame(layout);
+  };
+  list.classList.add('nsp-masonry');
+  layout();
+  requestAnimationFrame(()=>list.classList.add('nsp-masonry-ready'));
+  new ResizeObserver(entries=>{
+    const width=entries[0].contentRect.width;
+    if(width!==lastWidth){lastWidth=width;schedule();}
+  }).observe(list);
+  for(const image of list.querySelectorAll('img')){
+    image.addEventListener('load',schedule);
+    image.addEventListener('error',schedule);
+  }
+  document.fonts.ready.then(schedule);
+  return {layout:schedule};
+}
 // Preserve the archive's original name/date sorting and directions.
 document.querySelectorAll('.hg-portfolio-sortable').forEach(archive=>{
   const list=archive.querySelector('.kl-ptfsortable-items');let by='date',ascending=true;
+  const masonry=createMasonry(list);
   archive.querySelectorAll('[data-option-value]').forEach(link=>link.addEventListener('click',e=>{
     e.preventDefault();const value=link.dataset.optionValue;
     if(value==='name'||value==='date')by=value;else ascending=value==='true';
@@ -50,6 +92,7 @@ document.querySelectorAll('.hg-portfolio-sortable').forEach(archive=>{
       const result=by==='date'?Number(a.dataset.date)-Number(b.dataset.date):(a.querySelector('h3,h4')?.textContent||a.textContent).trim().localeCompare((b.querySelector('h3,h4')?.textContent||b.textContent).trim());
       return ascending?result:-result;
     }).forEach(item=>list.append(item));
+    masonry.layout();
     archive.querySelectorAll('[data-option-value]').forEach(a=>a.setAttribute('aria-pressed',String(a.dataset.optionValue===by||a.dataset.optionValue===String(ascending))));
   }));
 });

@@ -1,6 +1,6 @@
 # Migration status
 
-Updated 2026-10-27. **Local site implemented; release and real email delivery remain pending.** No deployment, DNS change, live-site alteration, or real test email has occurred.
+Updated 2026-10-27. **A Pages review copy is live; custom-domain cutover and real email delivery remain pending.** The owner has proceeded with Pages setup since the initial migration. The agent has not changed DNS, altered the original website, or sent a real test email.
 
 ## Resumed in VS Code
 
@@ -17,7 +17,7 @@ Source: [live website](https://nextstepprinting.com/), retrieved 2026-10-27. [Pa
 - Raw HTML and 299 discovered asset paths were captured in ignored `docs/reference/`. Only images, CSS, and fonts ship; original JavaScript is excluded.
 - All 15 originals were inspected in Edge at 1440/768/390 pixels after scrolling each page. Forty-five reference screenshots are in `docs/reference/screenshots/`; details are in `browser-all.log`.
 - Branding: orange `#ff7e00`, Montserrat, separate desktop/mobile logos, 3M marks/tint graphics, project photographs, dark header/footer, and original photo banners.
-- Header measured 185px on desktop, shrinking to 60px on scroll. Mobile initial header is 91.36px, with its own logo and normal-flow banner placement. Replacement measurements were corrected from `layout-debug-v4.log`.
+- Header measured 185px on desktop, shrinking to 60px on scroll. Mobile initial header is 91.36px, with its own logo and normal-flow banner placement. The later motion inspection confirmed the desktop header is transparent at the top and becomes dark when scrolling crosses 1px.
 - Menu: seven overlay navigation links at ordinary widths; no dropdown hierarchy. Footer repeats navigation, social profiles, address, phone, and email.
 - Interactions: lightboxes, recent-work carousel, archive Name/Date and ASC/DESC sorting, portfolio galleries and sharing.
 - No linked PDF/download, video embed, or upload input was found. Tint sheets are images.
@@ -56,9 +56,26 @@ The original Google+ share control cannot work: [Google terminated its integrati
 
 1. Owner visual review and any corrections on the feature branch.
 2. Confirm recipient and Resend-verified sender. Configure `QUOTE_TO`, `QUOTE_FROM`, secret `RESEND_API_KEY`, public `TURNSTILE_SITE_KEY`, and secret `TURNSTILE_SECRET_KEY` separately per approved environment. Never paste keys into chat/Git.
-3. Choose the future production branch and authorize Pages setup/deployment. README specifies None preset, root `/`, `npm run build`, `dist`, Node 22, root Functions, API routes, and compatibility date. No production branch is established.
+3. Confirm the long-term release branch after review. The owner's Pages setup screen selected `feature/website-migration`; the review address now responds successfully. Because GitHub pushes can trigger Pages deployments, further publishing needs explicit authorization. README specifies None preset, root `/`, `npm run build`, `dist`, Node 22, root Functions, API routes, and compatibility date.
 4. Authorize a real delivery check separately. Verified-domain/account behavior and inbox receipt are untested.
 5. Real Turnstile verification on approved hostnames and authenticated social-sharing completion remain external checks. No posts were made.
 6. Production cutover/DNS needs separate explicit authorization.
 
 The original production site is untouched. The migration is not fully complete while required configuration and delivery validation remain unresolved.
+
+## Hover, header, and masonry correction — 2026-10-27
+
+The owner reported missing hover transitions, an opaque initial desktop header, abrupt sticky-header changes, and a blank slot/row gaps in the Our Work grid.
+
+Fresh live inspection covered Home and Our Work hover states, footer pseudo-elements, header positions/backgrounds at multiple scroll offsets, and original gallery geometry. `docs/reference/motion-inspection.json` contains original/local before-change computed styles. This machine reports `prefers-reduced-motion: reduce`; the migration's blanket `transition:none !important` rule therefore suppressed all original hover transitions. The original site continues to apply its small hover fades in the same environment. The gallery's replacement CSS grid also placed the original clearfix pseudo-element into the first cell and stretched cards into rows instead of packing them by height.
+
+Changes:
+
+- Removed the blanket transition suppression. Original button/image/overlay/footer hover rules work again, including the footer dash growing from 8px to 12px. Reduced-motion mode shortens header/gallery relocation rather than removing all interaction feedback; automatic carousel movement remains suppressed in that mode.
+- Desktop header starts transparent, then smoothly changes background and shrinks from 185px to 60px once scrolling starts, reversing on return to the top. Mobile retains the original dark, normal-flow initial header. Menu opening/closing now fades, hamburger strokes transition, and carousel controls scroll only their own horizontal container smoothly.
+- A small dependency-free masonry routine places each card in the shortest column and animates its transform on resize/sort. Breakpoints match the source: four columns above 992px, three through 992px, two through 768px, one through 480px. Clearfix pseudo-elements no longer become cards. Intrinsic image dimensions reserve the correct space before photos load.
+- Window wheel/touch scrolling remains native and immediate. No smooth-scroll plugin, navigation delay, WordPress script, or former-provider integration was restored. Form handlers and credentials are unchanged.
+
+Focused Edge checks passed for actual intermediate animation frames, not only CSS declarations: footer width and image opacity interpolate in both motion preferences; the header shrinks/fades and restores correctly; cards pack without gaps/overlap at nine viewport widths, move through intermediate positions on resize, and repack after all sorting controls. Mobile header flow and immediate native `scrollTo` were verified. The 20 isolated form tests, static route/asset checks, and copy build also pass. `scripts/qa-motion.mjs` repeats these checks; [recorded motion results](evidence/motion-results.json) contain the measurements. All 45 responsive regression checks and isolated form/menu/gallery interactions passed again after these changes, with zero JavaScript exceptions or broken assets. [Updated gallery image](evidence/our-work-masonry.jpg) shows the transparent header and packed cards; browser-results.json and the home comparison were refreshed.
+
+The Pages review address `https://nextstepprinting.pages.dev/` returned HTTP 200 during read-only inspection. These corrections are being prepared locally; pushing this branch may automatically publish them, so publishing is held pending explicit authorization under AGENTS.md.

@@ -18,7 +18,7 @@ for(const page of pages)for(const width of [1440,768,390]){
   console.log(page.route,width,'overflow:',details.overflow,'broken images:',details.brokenImages.length);
 }
 await b.evaluate(`document.querySelector('.nsp-menu-toggle').click()`);assert.equal(await b.evaluate(`document.querySelector('#nsp-menu').hidden`),false);
-await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});assert.equal(await b.evaluate(`document.querySelector('#nsp-menu').hidden`),true);
+await b.send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});await pause(220);assert.equal(await b.evaluate(`document.querySelector('#nsp-menu').hidden`),true);
 await b.evaluate(`document.querySelector('.mfp-gallery a[href]')?.click()`);assert.equal(await b.evaluate(`!!document.querySelector('dialog[open]')`),true);
 await b.evaluate(`document.querySelector('dialog').close()`);
 await b.send('Page.navigate',{url:'http://127.0.0.1:4173/our-work/'});await pause(500);

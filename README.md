@@ -1,6 +1,6 @@
 # Next Step Printing
 
-Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to static HTML with Cloudflare Pages Functions and Resend. All 15 publicly linked pages are recreated. **Not deployed; real email delivery needs configuration.** See [migration status](docs/migration-status.md) for evidence and remaining checks.
+Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to static HTML with Cloudflare Pages Functions and Resend. All 15 publicly linked pages are recreated. **The owner-created Pages review copy is live; real email delivery needs configuration.** See [migration status](docs/migration-status.md) for evidence and remaining checks.
 
 ## Editing in VS Code
 
@@ -16,6 +16,8 @@ Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to s
 - `functions/api/form-config.js`: exposes only the public captcha site key when delivery is configured.
 
 Edit `public/`, not generated `dist/`. Text, images, and links are directly editable HTML. Headers/footers are currently repeated across pages, so shared changes require updating all 15 files. Original visual class names remain for fidelity. Captured CSS is standalone: WordPress, PHP, jQuery, the original host, and theme scripts are not required. Retain third-party license notices.
+
+Our Work uses a small masonry routine in `site.js`; its columns and animated positioning are styled in `site.css`. Original hover effects remain in the captured layout/component CSS. Small hover feedback remains enabled with reduced-motion preferences, while spatial transitions are shorter and automatic carousel movement is suppressed. Window scrolling stays native.
 
 ## Local commands
 
@@ -58,7 +60,7 @@ The build only copies `public/` to `dist/`, keeping documentation/tests outside 
 | Function routes | `/api/*`, from `public/_routes.json` |
 | Production branch | Pending owner decision after review |
 
-Do not connect an automatically deploying Pages project, deploy a preview, or change DNS without authorization. `migration-base` is an empty review base, not production. `feature/website-migration` is the working branch. Original page paths are retained; no page redirects are needed. Pages supplies normal directory/index URL handling.
+The owner has connected a Pages review site. Further deployments and DNS changes require authorization; pushing a connected branch can automatically deploy. `migration-base` is an empty review base, not production. `feature/website-migration` is the working branch and was selected in the owner's Pages setup screen. Original page paths are retained; no page redirects are needed. Pages supplies normal directory/index URL handling.
 
 References: [static HTML](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/), [Functions development](https://developers.cloudflare.com/pages/functions/local-development/), and [bindings/secrets](https://developers.cloudflare.com/pages/functions/bindings/).
 
@@ -93,6 +95,8 @@ Wrangler 4.154.0 successfully compiled and served the migration locally. With th
 ## Validation and provenance
 
 `npm run check` checks local references, forbidden dependencies, and secret patterns. `npm test` exercises the real handler with provider mocks. `scripts/browser.mjs` and `scripts/qa.mjs` are Windows/Edge-specific QA helpers; start the static server first. They are not hosted dependencies.
+
+`node scripts/qa-motion.mjs` additionally verifies hover interpolation in both motion preferences, transparent/shrinking header states, gap-free masonry across breakpoints, animated resize/sort behavior, and immediate native scrolling.
 
 `scripts/inspect.mjs` and `scripts/import-original.mjs` are one-time provenance tools, **not build commands**. The importer overwrites HTML; never rerun it over edited pages. Ignored `docs/reference/` contains raw originals, 45 original screenshots, local comparisons, and detailed QA logs. Tracked page/asset inventories summarize the capture.
 
