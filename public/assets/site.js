@@ -99,14 +99,31 @@ document.querySelectorAll('.hg-portfolio-sortable').forEach(archive=>{
 const imageLinks=[...document.querySelectorAll('a[data-lightbox],a[data-mfp="image"],.mfp-gallery a[href]')].filter(a=>/\.(jpe?g|png|webp|gif)$/i.test(a.pathname));
 if(imageLinks.length){
   const dialog=document.createElement('dialog');dialog.className='nsp-lightbox';dialog.setAttribute('aria-label','Project image');
-  dialog.innerHTML='<button type="button" class="nsp-close" aria-label="Close image">Close</button><img alt=""><div class="nsp-lightbox-controls"><button type="button" data-prev>Previous</button><span></span><button type="button" data-next>Next</button></div>';
-  document.body.append(dialog);let index=0,returnFocus;
-  function show(n){index=(n+imageLinks.length)%imageLinks.length;const a=imageLinks[index];dialog.querySelector('img').src=a.href;dialog.querySelector('img').alt=a.title||a.querySelector('img')?.alt||'Next Step Printing project';dialog.querySelector('span').textContent=`${index+1} / ${imageLinks.length}`;}
-  imageLinks.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();returnFocus=a;show(i);dialog.showModal();}));
+  dialog.innerHTML=`
+    <button type="button" class="nsp-close" aria-label="Close image" autofocus>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"/></svg>
+    </button>
+    <div class="nsp-lightbox-stage">
+      <button type="button" class="nsp-lightbox-arrow" data-prev aria-label="Previous image">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6"/></svg>
+      </button>
+      <img alt="">
+      <button type="button" class="nsp-lightbox-arrow" data-next aria-label="Next image">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6"/></svg>
+      </button>
+      <span class="nsp-lightbox-count" role="status" aria-live="polite" aria-atomic="true"></span>
+    </div>`;
+  document.body.append(dialog);let index=0,returnFocus,previousOverflow;
+  const enlargedImage=dialog.querySelector('img');
+  enlargedImage.addEventListener('load',()=>enlargedImage.animate([{opacity:.4},{opacity:1}],{duration:160,easing:'ease-out'}));
+  function show(n){index=(n+imageLinks.length)%imageLinks.length;const a=imageLinks[index];enlargedImage.src=a.href;enlargedImage.alt=a.title||a.querySelector('img')?.alt||'Next Step Printing project';dialog.querySelector('.nsp-lightbox-count').textContent=`${index+1} / ${imageLinks.length}`;}
+  if(imageLinks.length===1)dialog.querySelectorAll('.nsp-lightbox-arrow').forEach(button=>button.hidden=true);
+  imageLinks.forEach((a,i)=>a.addEventListener('click',e=>{e.preventDefault();returnFocus=a;previousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';show(i);dialog.showModal();}));
   dialog.querySelector('.nsp-close').onclick=()=>dialog.close();
   dialog.querySelector('[data-prev]').onclick=()=>show(index-1);dialog.querySelector('[data-next]').onclick=()=>show(index+1);
-  dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')show(index+1);});
-  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});dialog.addEventListener('close',()=>returnFocus?.focus());
+  dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();show(index-1);}if(e.key==='ArrowRight'){e.preventDefault();show(index+1);}});
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+  dialog.addEventListener('close',()=>{document.body.style.overflow=previousOverflow;returnFocus?.focus({preventScroll:true});});
 }
 const form=document.querySelector('[data-quote-form]');
 if(form){

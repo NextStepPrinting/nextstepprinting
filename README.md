@@ -19,6 +19,8 @@ Edit `public/`, not generated `dist/`. Text, images, and links are directly edit
 
 Our Work uses a small masonry routine in `site.js`; its columns and animated positioning are styled in `site.css`. Original hover effects remain in the captured layout/component CSS. Small hover feedback remains enabled with reduced-motion preferences, while spatial transitions are shorter and automatic carousel movement is suppressed. Window scrolling stays native.
 
+The image viewer has a transparent stage over a dark backdrop, circular chevrons beside the image, a top-right X, and keyboard navigation. Its style is in the `.nsp-lightbox` rules in `site.css`.
+
 ## Local commands
 
 Use Node.js 22 or newer:
@@ -97,6 +99,8 @@ Wrangler 4.154.0 successfully compiled and served the migration locally. With th
 `npm run check` checks local references, forbidden dependencies, and secret patterns. `npm test` exercises the real handler with provider mocks. `scripts/browser.mjs` and `scripts/qa.mjs` are Windows/Edge-specific QA helpers; start the static server first. They are not hosted dependencies.
 
 `node scripts/qa-motion.mjs` additionally verifies hover interpolation in both motion preferences, transparent/shrinking header states, gap-free masonry across breakpoints, animated resize/sort behavior, and immediate native scrolling.
+
+`node scripts/qa-lightbox.mjs` checks borderless viewer layout, controls at desktop/mobile widths, pointer/keyboard navigation, closing, and focus/scroll restoration.
 
 `scripts/inspect.mjs` and `scripts/import-original.mjs` are one-time provenance tools, **not build commands**. The importer overwrites HTML; never rerun it over edited pages. Ignored `docs/reference/` contains raw originals, 45 original screenshots, local comparisons, and detailed QA logs. Tracked page/asset inventories summarize the capture.
 

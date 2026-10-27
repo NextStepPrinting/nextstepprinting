@@ -1,0 +1,284 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "geometry": {
+        "width": 1440,
+        "height": 900,
+        "dialogBackground": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "image": {
+          "x": 430.5,
+          "y": 64,
+          "width": 579,
+          "height": 772,
+          "top": 64,
+          "right": 1009.5,
+          "bottom": 836,
+          "left": 430.5
+        },
+        "previous": {
+          "x": 370.5,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 414.5,
+          "bottom": 472,
+          "left": 370.5
+        },
+        "next": {
+          "x": 1025.5,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 1069.5,
+          "bottom": 472,
+          "left": 1025.5
+        },
+        "close": {
+          "x": 1380,
+          "y": 16,
+          "width": 44,
+          "height": 44,
+          "top": 16,
+          "right": 1424,
+          "bottom": 60,
+          "left": 1380
+        },
+        "radius": "50%",
+        "text": "2 / 4",
+        "labels": [
+          "Close image",
+          "Previous image",
+          "Next image"
+        ]
+      }
+    },
+    {
+      "width": 768,
+      "geometry": {
+        "width": 768,
+        "height": 900,
+        "dialogBackground": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "image": {
+          "x": 94.5,
+          "y": 64,
+          "width": 579,
+          "height": 772,
+          "top": 64,
+          "right": 673.5,
+          "bottom": 836,
+          "left": 94.5
+        },
+        "previous": {
+          "x": 34.5,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 78.5,
+          "bottom": 472,
+          "left": 34.5
+        },
+        "next": {
+          "x": 689.5,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 733.5,
+          "bottom": 472,
+          "left": 689.5
+        },
+        "close": {
+          "x": 708,
+          "y": 16,
+          "width": 44,
+          "height": 44,
+          "top": 16,
+          "right": 752,
+          "bottom": 60,
+          "left": 708
+        },
+        "radius": "50%",
+        "text": "2 / 4",
+        "labels": [
+          "Close image",
+          "Previous image",
+          "Next image"
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "geometry": {
+        "width": 390,
+        "height": 900,
+        "dialogBackground": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "image": {
+          "x": 56,
+          "y": 264.671875,
+          "width": 277.984375,
+          "height": 370.65625,
+          "top": 264.671875,
+          "right": 333.984375,
+          "bottom": 635.328125,
+          "left": 56
+        },
+        "previous": {
+          "x": 4,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 48,
+          "bottom": 472,
+          "left": 4
+        },
+        "next": {
+          "x": 342,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 386,
+          "bottom": 472,
+          "left": 342
+        },
+        "close": {
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44,
+          "top": 16,
+          "right": 374,
+          "bottom": 60,
+          "left": 330
+        },
+        "radius": "50%",
+        "text": "2 / 4",
+        "labels": [
+          "Close image",
+          "Previous image",
+          "Next image"
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "geometry": {
+        "width": 320,
+        "height": 900,
+        "dialogBackground": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "image": {
+          "x": 56,
+          "y": 311.328125,
+          "width": 207.984375,
+          "height": 277.328125,
+          "top": 311.328125,
+          "right": 263.984375,
+          "bottom": 588.65625,
+          "left": 56
+        },
+        "previous": {
+          "x": 4,
+          "y": 427.984375,
+          "width": 44,
+          "height": 44,
+          "top": 427.984375,
+          "right": 48,
+          "bottom": 471.984375,
+          "left": 4
+        },
+        "next": {
+          "x": 272,
+          "y": 427.984375,
+          "width": 44,
+          "height": 44,
+          "top": 427.984375,
+          "right": 316,
+          "bottom": 471.984375,
+          "left": 272
+        },
+        "close": {
+          "x": 260,
+          "y": 16,
+          "width": 44,
+          "height": 44,
+          "top": 16,
+          "right": 304,
+          "bottom": 60,
+          "left": 260
+        },
+        "radius": "50%",
+        "text": "2 / 4",
+        "labels": [
+          "Close image",
+          "Previous image",
+          "Next image"
+        ]
+      }
+    },
+    {
+      "landscape": {
+        "width": 1440,
+        "height": 900,
+        "dialogBackground": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "image": {
+          "x": 139.546875,
+          "y": 64,
+          "width": 1160.890625,
+          "height": 772,
+          "top": 64,
+          "right": 1300.4375,
+          "bottom": 836,
+          "left": 139.546875
+        },
+        "previous": {
+          "x": 79.546875,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 123.546875,
+          "bottom": 472,
+          "left": 79.546875
+        },
+        "next": {
+          "x": 1316.4375,
+          "y": 428,
+          "width": 44,
+          "height": 44,
+          "top": 428,
+          "right": 1360.4375,
+          "bottom": 472,
+          "left": 1316.4375
+        },
+        "close": {
+          "x": 1380,
+          "y": 16,
+          "width": 44,
+          "height": 44,
+          "top": 16,
+          "right": 1424,
+          "bottom": 60,
+          "left": 1380
+        },
+        "radius": "50%",
+        "text": "1 / 8",
+        "labels": [
+          "Close image",
+          "Previous image",
+          "Next image"
+        ]
+      }
+    }
+  ],
+  "errors": []
+}
