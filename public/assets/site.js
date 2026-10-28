@@ -170,13 +170,13 @@ if(form){
         if(widget!==undefined)window.turnstile.remove(widget);
         widgetSize=size;
         widget=window.turnstile.render(slot,{sitekey:config.siteKey,action:formKind,theme:formKind==='contact'?'light':'dark',size,
-          'expired-callback':()=>say('Verification expired. Please complete it again before sending.',true),
-          'error-callback':()=>say('Verification could not be completed. Please try again.',true)});
+          'expired-callback':()=>deliveryReady?say('Verification expired. Please complete it again before sending.',true):unavailable(),
+          'error-callback':()=>deliveryReady?say('Verification could not be completed. Please try again.',true):unavailable()});
         turnstileReady=true;
       };
       render();new ResizeObserver(render).observe(slot);
     };
-    const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=nspCaptchaReady&render=explicit';script.async=true;script.onerror=()=>say('Verification could not load. Please try again or email info@nextstepprinting.com.',true);document.head.append(script);
+    const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=nspCaptchaReady&render=explicit';script.async=true;script.onerror=()=>deliveryReady?say('Verification could not load. Please try again or email info@nextstepprinting.com.',true):unavailable();document.head.append(script);
   }).catch(unavailable);
   form.addEventListener('submit',async event=>{
     event.preventDefault();if(!form.reportValidity())return;
