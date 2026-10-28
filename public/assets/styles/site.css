@@ -36,6 +36,10 @@ body { overflow-x:hidden; }
   #nsp-menu a:hover,#nsp-menu a[aria-current] { color:#fff; background:#ff7e00; text-decoration:none; }
   #nsp-menu a::after { display:none; }
   #nsp-menu a:focus-visible { outline-color:#ff7e00; }
+  /* Transform only the homepage brand; keep its compact layout slot and the
+     navigation links stationary. The existing stroke/shadow supports the hero. */
+  .home .nsp-logo { transform-origin:top left; transform:translateY(50px) scale(2.4856); filter:drop-shadow(0 2px 4px #000c); transition:transform .3s ease; }
+  .home.nsp-logo-compact .nsp-logo { transform:none; }
 }
 .skip-link { position:fixed; left:10px; top:-100px; z-index:200; padding:12px; background:#fff; color:#111; }
 .skip-link:focus { top:10px; }
@@ -93,6 +97,7 @@ button:disabled { opacity:.6; cursor:wait; }
    spatial layout/header transitions instead of disabling the entire interface. */
 @media(prefers-reduced-motion:reduce) {
   .nsp-header,.nsp-header-inner,.nsp-logo,.nsp-logo img { transition-duration:.12s; }
+  .home .nsp-logo { transition:none; }
   .nsp-masonry-ready,.nsp-masonry-ready > li { transition-duration:.16s; }
 }
 

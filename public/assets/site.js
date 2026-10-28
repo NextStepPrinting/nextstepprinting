@@ -1,6 +1,10 @@
 const toggle = document.querySelector('.nsp-menu-toggle');
 const menu = document.querySelector('#nsp-menu');
-const updateHeader=()=>document.body.classList.toggle('nsp-stuck',window.scrollY>1);
+const homeLogo=document.body.classList.contains('home');
+const updateHeader=()=>{
+  document.body.classList.toggle('nsp-stuck',window.scrollY>1);
+  if(homeLogo)document.body.classList.toggle('nsp-logo-compact',window.scrollY>=80);
+};
 window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
 const currentDate=document.querySelector('#current-date');
 if(currentDate)currentDate.textContent=new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric'}).format(new Date());
