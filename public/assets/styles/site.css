@@ -145,7 +145,7 @@ button:disabled { opacity:.6; cursor:wait; }
 .nsp-contact-page.nsp-stuck #page_wrapper { padding-top:0; }
 .nsp-contact-main { background:#fff; color:#282a2e; font-family:Montserrat,Arial,sans-serif; }
 .nsp-contact-container,.nsp-hero-container { width:calc(100% - 48px); max-width:1160px; margin:0 auto; }
-.nsp-contact-hero,.nsp-page-hero { min-height:320px; display:flex; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18) 70%),var(--nsp-hero-image,url('/assets/images/2022/03/NSP_Home.jpg')) center 58% / cover no-repeat; background-color:#202122; color:#fff; font-family:Montserrat,Arial,sans-serif; }
+.nsp-contact-hero,.nsp-page-hero { min-height:320px; display:flex; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18) 70%),var(--nsp-hero-image,url('/assets/images/2022/03/NSP_Home.jpg')) center / cover no-repeat; background-color:#202122; color:#fff; font-family:Montserrat,Arial,sans-serif; }
 .nsp-contact-hero .nsp-contact-container,.nsp-page-hero .nsp-hero-container { padding-top:40px; padding-bottom:40px; }
 .nsp-contact-hero h1,.nsp-page-hero h2 { margin:0 0 14px; color:#fff; font:700 clamp(34px,4vw,50px)/1.15 Montserrat,Arial,sans-serif; letter-spacing:-.025em; }
 .nsp-contact-hero p,.nsp-page-hero p { max-width:430px; margin:0; font-size:16px; line-height:1.75; }
