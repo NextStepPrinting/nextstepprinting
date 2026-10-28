@@ -199,3 +199,87 @@ button:disabled { opacity:.6; cursor:wait; }
   .nsp-message-heading h2 { font-size:23px; }
   .nsp-contact-form { grid-template-columns:1fr; gap:18px; }
 }
+
+/* Graphic Design: portfolio-led layout using the original project photographs. */
+.nsp-design-container { width:calc(100% - 64px); max-width:1280px; margin:0 auto; font-family:Montserrat,Arial,sans-serif; }
+.nsp-design-intro,.nsp-design-work { background:#fff; color:#222; }
+.nsp-design-intro { padding:54px 0; }
+.nsp-design-intro-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); align-items:center; gap:48px; }
+.nsp-design-intro-copy { padding:10px 0; }
+.nsp-design-eyebrow { margin:0 0 20px; color:#b94e00; font:700 12px/1.6 Montserrat,Arial,sans-serif; text-transform:uppercase; letter-spacing:.18em; }
+.nsp-design-eyebrow::after { content:""; display:block; width:38px; height:3px; margin-top:12px; background:#ff7e00; }
+.nsp-design-intro h1 { margin:0 0 20px; font:700 clamp(32px,3.5vw,48px)/1.12 Montserrat,Arial,sans-serif; letter-spacing:-.04em; color:#171819; }
+.nsp-design-copy { margin:0 0 28px; font-size:15px; line-height:1.85; max-width:520px; }
+.nsp-design-button { display:inline-flex; align-items:center; justify-content:center; gap:24px; min-height:48px; padding:13px 24px; border:1px solid #ff7e00; background:#ff7e00; color:#fff; font:700 12px/1.6 Montserrat,Arial,sans-serif; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; transition:background-color .2s ease,color .2s ease; }
+.nsp-design-button:hover { background:#e66f00; border-color:#e66f00; color:#fff; text-decoration:none; }
+.nsp-design-button > span { font-size:20px; line-height:1; }
+.nsp-design-button--outline { color:#333; background:transparent; }
+.nsp-design-button--outline:hover { color:#fff; background:#ff7e00; border-color:#ff7e00; }
+.nsp-design-feature { min-width:0; margin:0; }
+.nsp-design-feature > a { display:block; }
+.nsp-design-feature figcaption { display:flex; align-items:center; justify-content:flex-end; gap:12px; padding:12px 0 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.12em; }
+.nsp-design-feature figcaption > span { width:28px; height:2px; background:#ff7e00; }
+/* Each window displays an existing part of Lexus_3.jpg; no invented or edited
+   project imagery. The same source is downloaded once and shared by the views. */
+.nsp-design-crop { --crop-width:1650; --crop-height:743; --crop-left:0; --crop-top:680; position:relative; overflow:hidden; aspect-ratio:var(--crop-width) / var(--crop-height); background:#202122; }
+.nsp-design-crop > img { display:block; position:absolute; width:calc(1650 / var(--crop-width) * 100%); max-width:none; height:auto; left:calc(var(--crop-left) / var(--crop-width) * -100%); top:calc(var(--crop-top) / var(--crop-height) * -100%); transition:opacity .25s ease; }
+.nsp-design-crop--concept { --crop-width:880; --crop-height:680; --crop-left:0; --crop-top:0; }
+.nsp-design-crop--print { --crop-width:770; --crop-height:680; --crop-left:880; --crop-top:0; }
+.nsp-design-feature a:hover img { opacity:.85; }
+.nsp-design-process { background:#202122; color:#e4e4e4; padding:40px 0; }
+.nsp-design-section-title { margin:0 0 24px; font:700 clamp(26px,2.8vw,36px)/1.2 Montserrat,Arial,sans-serif; letter-spacing:-.03em; color:inherit; }
+.nsp-design-section-title::after { content:""; display:block; width:38px; height:3px; margin-top:12px; background:#ff7e00; }
+.nsp-design-process-grid,.nsp-design-work-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.nsp-design-step { min-width:0; }
+.nsp-design-process-image { display:block; position:relative; overflow:hidden; aspect-ratio:1.25; background:#18191a; }
+.nsp-design-process-image .nsp-design-crop { width:104%; }
+.nsp-design-process-image--finished .nsp-design-crop { width:180%; margin-left:-40%; }
+.nsp-design-step-copy { display:flex; align-items:center; gap:16px; padding-top:18px; }
+.nsp-design-step-number { flex:0 0 auto; color:#ff7e00; font:700 40px/1 Montserrat,Arial,sans-serif; letter-spacing:-.06em; }
+.nsp-design-step h3 { margin:0; color:#fff; font:700 12px/1.5 Montserrat,Arial,sans-serif; text-transform:uppercase; letter-spacing:.1em; }
+.nsp-design-work { padding:44px 0; }
+.nsp-design-work .nsp-design-section-title { text-transform:uppercase; margin-bottom:16px; }
+.nsp-design-work-intro { max-width:880px; margin:0 0 28px; font-size:14px; line-height:1.8; }
+.nsp-design-work-card { display:block; min-width:0; color:#222; }
+.nsp-design-work-card > div { overflow:hidden; aspect-ratio:1.6; background:#eee; }
+.nsp-design-work-card img { display:block; width:100%; height:100%; object-fit:cover; transition:opacity .25s ease; }
+.nsp-design-work-card h3 { display:flex; align-items:center; gap:12px; margin:14px 0 0; font:700 11px/1.6 Montserrat,Arial,sans-serif; text-transform:uppercase; letter-spacing:.08em; color:inherit; }
+.nsp-design-work-card h3::before { content:""; width:24px; height:2px; flex-shrink:0; background:#ff7e00; }
+.nsp-design-work-card h3 > span { margin-left:auto; color:#b94e00; font-size:18px; }
+.nsp-design-work-card:hover { color:#b94e00; text-decoration:none; }
+.nsp-design-work-card:hover img { opacity:.8; }
+.nsp-design-more-projects { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 22px; margin-top:28px; font-size:11px; line-height:1.8; }
+.nsp-design-more-projects > span { font-weight:700; color:#666; }
+.nsp-design-more-projects a { color:#333; text-decoration:underline; text-underline-offset:3px; transition:color .2s ease; }
+.nsp-design-more-projects a:hover { color:#b94e00; }
+.nsp-design-gallery-link { margin-top:28px; text-align:center; }
+.nsp-design-quote { position:relative; overflow:hidden; background:#202122; color:#fff; padding:28px 0; }
+.nsp-design-quote::before { content:""; position:absolute; inset:0 40% 0 -10%; background:linear-gradient(90deg,transparent 18%,#0000000a 18% 19%,transparent 19% 21%,#0000000a 21% 22%,transparent 22%),#ff7e00; box-shadow:10px 0 0 #cf6500,20px 0 0 #ed7600; transform:skewX(-30deg); pointer-events:none; }
+.nsp-design-quote .nsp-design-container { position:relative; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nsp-design-quote h2 { margin:0; color:#fff; font:italic 700 clamp(26px,3vw,38px)/1.2 Montserrat,Arial,sans-serif; letter-spacing:-.03em; }
+@media(max-width:1000px) {
+  .nsp-design-intro-grid { gap:28px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .nsp-design-process-grid,.nsp-design-work-grid { gap:18px; }
+  .nsp-design-step-copy { gap:10px; }
+  .nsp-design-step-number { font-size:32px; }
+  .nsp-design-work-card h3 { font-size:10px; letter-spacing:.02em; gap:8px; }
+}
+@media(max-width:767px) {
+  .nsp-design-container { width:calc(100% - 40px); }
+  .nsp-design-intro { padding:32px 0; }
+  .nsp-design-intro-grid { grid-template-columns:1fr; gap:28px; }
+  .nsp-design-intro-copy { padding:0; }
+  .nsp-design-eyebrow { margin-bottom:18px; }
+  .nsp-design-copy { font-size:14px; }
+  .nsp-design-process,.nsp-design-work { padding:32px 0; }
+  .nsp-design-process-grid,.nsp-design-work-grid { grid-template-columns:1fr; gap:28px; }
+  .nsp-design-process-image { aspect-ratio:1.4; }
+  .nsp-design-step-number { font-size:38px; }
+  .nsp-design-work-card h3 { font-size:12px; }
+  .nsp-design-more-projects { flex-direction:column; gap:10px; align-items:flex-start; }
+  .nsp-design-quote { background:#ff7e00; }
+  .nsp-design-quote::before { inset:0 -10%; box-shadow:none; }
+  .nsp-design-quote .nsp-design-container { flex-direction:column; align-items:flex-start; gap:20px; }
+  .nsp-design-quote .nsp-design-button { background:#202122; color:#fff; border-color:#202122; }
+  .nsp-design-quote .nsp-design-button:hover { background:#333; }
+}
