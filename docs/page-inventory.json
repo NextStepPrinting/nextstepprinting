@@ -1,0 +1,244 @@
+[
+  {
+    "route": "/",
+    "title": "Next Step Printing – Printing & Graphic Services",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/05e34c9d-140-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/about/",
+    "title": "About – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/2b0e521d-186-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/services/",
+    "title": "Services – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/83e30902-184-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/our-work/",
+    "title": "Our Work – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/4ef9abdb-282-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/graphic-design/",
+    "title": "Graphic Design – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/4751e39e-188-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/get-a-quote/",
+    "title": "Get a Quote – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/0cf0af49-192-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 1
+  },
+  {
+    "route": "/contact/",
+    "title": "Contact – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/971f1270-190-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0,
+    "localForms": 1,
+    "localFormEndpoint": "/api/contact"
+  },
+  {
+    "route": "/portfolio/misc/",
+    "title": "Misc. – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/fca047c6-540-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/booths-buildings-walls/",
+    "title": "Booths / Buildings / Walls – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/bb40d298-471-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/race-vehicles/",
+    "title": "Trailers / RV’s / Buses – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/eb098775-449-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/encore-peterbilt/",
+    "title": "Encore Gas and Supply – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/ba690a6f-402-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/rhys-millen-jackal/",
+    "title": "Rhys Millen Racing – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/d2048b3f-292-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/project-x-trade-show/",
+    "title": "Project X SEMA Booth – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/9041f03a-291-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/bud-light-gmg-porsche-vehicle-wrap/",
+    "title": "Race Vehicles – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/dfeb90a2-281-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  },
+  {
+    "route": "/portfolio/moab-tables/",
+    "title": "Moab Table Wraps – Next Step Printing",
+    "styles": [
+      "/assets/styles/cb492d22-style.css",
+      "/assets/styles/0d705911-bootstrap.min.css",
+      "/assets/styles/e56aaf76-template.min.css",
+      "/assets/styles/2b17c537-znb_frontend.css",
+      "/assets/styles/cd46ba0e-288-layout.css",
+      "/assets/styles/53b30bcc-animate.min.css",
+      "/assets/styles/b91c1b3f-styles.min.css",
+      "/assets/styles/b2838333-print.css",
+      "/assets/styles/68dc703f-zn_dynamic.css"
+    ],
+    "forms": 0
+  }
+]
