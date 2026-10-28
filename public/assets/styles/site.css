@@ -138,17 +138,22 @@ button:disabled { opacity:.6; cursor:wait; }
   .nsp-footer-contact a:not(:first-child) { border:0; padding:0; }
 }
 
-/* Contact page: scoped navigation contrast and layout; other page mains retain
-   their original layout and styling. */
+/* Shared interior-page banners match the Contact page's typography and spacing.
+   Page-specific images are supplied through --nsp-hero-image. */
 .nsp-contact-page #page_wrapper { overflow:clip; padding-top:0; }
 .nsp-contact-page .nsp-header,.nsp-contact-page.nsp-stuck .nsp-header { position:sticky; top:0; background:#1d1d1d; }
 .nsp-contact-page.nsp-stuck #page_wrapper { padding-top:0; }
 .nsp-contact-main { background:#fff; color:#282a2e; font-family:Montserrat,Arial,sans-serif; }
-.nsp-contact-container { width:calc(100% - 48px); max-width:1160px; margin:0 auto; }
-.nsp-contact-hero { min-height:320px; display:flex; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18) 70%),url('/assets/images/2022/03/NSP_Home.jpg') center 58% / cover no-repeat; color:#fff; }
-.nsp-contact-hero .nsp-contact-container { padding-top:40px; padding-bottom:40px; }
-.nsp-contact-hero h1 { margin:0 0 14px; color:#fff; font:700 clamp(34px,4vw,50px)/1.15 Montserrat,Arial,sans-serif; letter-spacing:-.025em; }
-.nsp-contact-hero p { max-width:430px; margin:0; font-size:16px; line-height:1.75; }
+.nsp-contact-container,.nsp-hero-container { width:calc(100% - 48px); max-width:1160px; margin:0 auto; }
+.nsp-contact-hero,.nsp-page-hero { min-height:320px; display:flex; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18) 70%),var(--nsp-hero-image,url('/assets/images/2022/03/NSP_Home.jpg')) center 58% / cover no-repeat; background-color:#202122; color:#fff; font-family:Montserrat,Arial,sans-serif; }
+.nsp-contact-hero .nsp-contact-container,.nsp-page-hero .nsp-hero-container { padding-top:40px; padding-bottom:40px; }
+.nsp-contact-hero h1,.nsp-page-hero h2 { margin:0 0 14px; color:#fff; font:700 clamp(34px,4vw,50px)/1.15 Montserrat,Arial,sans-serif; letter-spacing:-.025em; }
+.nsp-contact-hero p,.nsp-page-hero p { max-width:430px; margin:0; font-size:16px; line-height:1.75; }
+.nsp-page-trail { background:#202122; color:#d5d6d7; padding:12px 0; }
+.nsp-page-trail .nsp-hero-container { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.nsp-page-trail .breadcrumbs { float:none; margin:0; padding:0; background:none; }
+.nsp-page-trail .breadcrumbs a { color:inherit; }
+.nsp-page-trail .subheader-currentdate { float:none; flex-shrink:0; margin:0; padding:0; }
 .nsp-contact-content { padding-top:44px; padding-bottom:64px; }
 .nsp-contact-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
 .nsp-contact-card { display:flex; flex-direction:column; align-items:center; text-align:center; padding:28px 18px; border:1px solid #eceef0; border-radius:6px; box-shadow:0 3px 16px #20212206; }
@@ -179,10 +184,10 @@ button:disabled { opacity:.6; cursor:wait; }
 .nsp-send-message { padding:13px 20px; border:1px solid #ff7e00; border-radius:4px; background:#ff7e00; color:#1d1d1d; font:700 14px/1.5 Montserrat,Arial,sans-serif; cursor:pointer; transition:background-color .18s ease-out; }
 .nsp-send-message:hover { background:#ee7300; }
 @media(max-width:767px) {
-  .nsp-contact-container { width:calc(100% - 40px); }
-  .nsp-contact-hero { min-height:270px; align-items:flex-end; background-position:62% center; background-image:linear-gradient(0deg,rgba(0,0,0,.88),rgba(0,0,0,.05) 90%),url('/assets/images/2022/03/NSP_Home.jpg'); }
-  .nsp-contact-hero .nsp-contact-container { padding-top:110px; padding-bottom:24px; }
-  .nsp-contact-hero p { font-size:14px; line-height:1.7; max-width:330px; }
+  .nsp-contact-container,.nsp-hero-container { width:calc(100% - 40px); }
+  .nsp-contact-hero,.nsp-page-hero { min-height:270px; align-items:flex-end; background-position:62% center; background-image:linear-gradient(0deg,rgba(0,0,0,.88),rgba(0,0,0,.05) 90%),var(--nsp-hero-image,url('/assets/images/2022/03/NSP_Home.jpg')); }
+  .nsp-contact-hero .nsp-contact-container,.nsp-page-hero .nsp-hero-container { padding-top:110px; padding-bottom:24px; }
+  .nsp-contact-hero p,.nsp-page-hero p { font-size:14px; line-height:1.7; max-width:330px; }
   .nsp-contact-content { padding-top:8px; padding-bottom:40px; }
   .nsp-contact-cards { grid-template-columns:1fr; gap:0; }
   .nsp-contact-card { flex-direction:row; align-items:flex-start; gap:16px; text-align:left; border:0; border-bottom:1px solid #e4e7eb; border-radius:0; box-shadow:none; padding:24px 0; }
