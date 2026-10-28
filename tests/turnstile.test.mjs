@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createContactHandler} from '../functions/api/contact.js';
+import {expectedHostnames,TURNSTILE_SITE_KEY} from '../functions/_lib/turnstile.js';
+const env={RESEND_API_KEY:'mock-only',QUOTE_FROM:'sender@example.test',QUOTE_TO:'recipient@example.test',TURNSTILE_SECRET_KEY:'mock-only-secret',TURNSTILE_HOSTNAMES:'preview.example.test'};
+const data={name:'Customer',email:'customer@example.test',subject:'Question',message:'Mocked test',submissionId:'52b3ba4e-642a-4e43-8578-970d01838524',turnstileToken:'mock-token'};
+const request=(host='preview.example.test')=>new Request('https://'+host+'/api/contact',{method:'POST',headers:{Origin:'https://'+host,'Content-Type':'application/json'},body:JSON.stringify(data)});
+test('public key matches the existing owner widget; default hosts are deployment-specific',()=>{assert.equal(TURNSTILE_SITE_KEY,'0x4AAAAAAFo4dXCxF6ZlPYBa');assert.deepEqual([...expectedHostnames({})],['nextstepprinting.pages.dev']);assert.deepEqual([...expectedHostnames({TURNSTILE_HOSTNAMES:'localhost,127.0.0.1,preview.example.test'})],['preview.example.test']);});
+for(const success of ['true',1,null,false])test('Siteverify requires strict true: '+success,async()=>{const calls=[];const mock=async(url)=>{calls.push(url);return Response.json({success,hostname:'preview.example.test',action:'contact'});};const response=await createContactHandler(mock)({request:request(),env});assert.equal(response.status,400);assert.equal(calls.length,1);});
+test('unapproved request hostname is rejected without provider calls',async()=>{let calls=0;const response=await createContactHandler(async()=>{calls++;})({request:request('other.example.test'),env});assert.equal(response.status,403);assert.equal(calls,0);});
+test('a provider replay verdict prevents a second delivery',async()=>{let verifications=0,sends=0;const mock=async url=>{if(url.includes('siteverify'))return Response.json(++verifications===1?{success:true,hostname:'preview.example.test',action:'contact'}:{success:false,'error-codes':['timeout-or-duplicate']});sends++;return Response.json({id:'isolated-id'});};const handler=createContactHandler(mock);assert.equal((await handler({request:request(),env})).status,200);assert.equal((await handler({request:request(),env})).status,400);assert.equal(sends,1);});

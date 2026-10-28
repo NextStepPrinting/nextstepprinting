@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createQuoteHandler} from '../functions/api/quote.js';
 import {onRequestGet} from '../functions/api/form-config.js';
-const env={RESEND_API_KEY:'isolated-mock-key',QUOTE_FROM:'Mock <sender@example.test>',QUOTE_TO:'recipient@example.test',TURNSTILE_SECRET_KEY:'isolated-secret',TURNSTILE_SITE_KEY:'public-mock-key'};
+const env={RESEND_API_KEY:'isolated-mock-key',QUOTE_FROM:'Mock <sender@example.test>',QUOTE_TO:'recipient@example.test',TURNSTILE_SECRET_KEY:'isolated-secret',TURNSTILE_HOSTNAMES:'preview.example.test',TURNSTILE_SITE_KEY:'public-mock-key'};
 const values={name:'Customer',email:'customer@example.test',phone:'555 123 4567',city:'Fountain Valley',projectType:'Vehicle wrap',details:'Please quote a wrap.',website:'',submissionId:'52b3ba4e-642a-4e43-8578-970d01838524',turnstileToken:'mock-token'};
 function request(data=values,options={}){return new Request('https://preview.example.test/api/quote',{method:'POST',headers:{Origin:'https://preview.example.test','Content-Type':'application/json',...options.headers},body:JSON.stringify(data),...options});}
 function mock({accepted=true,verified=true,hostname='preview.example.test',action='quote',id='mock-email-id',throws=false}={}){
@@ -29,4 +29,4 @@ test('malformed JSON and null are rejected',async()=>{const p=mock();for(const b
 for(const options of [{verified:false},{hostname:'attacker.example.test'},{action:'other'}])test('invalid captcha verdict prevents delivery '+JSON.stringify(options),async()=>{const p=mock(options);const r=await createQuoteHandler(p.fetch)({request:request(),env});assert.equal(r.status,400);assert.equal(p.calls.length,1);});
 for(const options of [{accepted:false},{id:''},{throws:true}])test('provider failure never reports success '+JSON.stringify(options),async()=>{const p=mock(options);const r=await createQuoteHandler(p.fetch)({request:request(),env});assert.equal(r.status,503);assert.equal((await r.json()).ok,false);});
 test('missing setup fails closed and does not call any provider',async()=>{const p=mock();const r=await createQuoteHandler(p.fetch)({request:request(),env:{}});assert.equal(r.status,503);assert.equal(p.calls.length,0);});
-test('public configuration exposes only site key',async()=>{assert.deepEqual(await onRequestGet({env}).json(),{siteKey:env.TURNSTILE_SITE_KEY});assert.equal(onRequestGet({env:{}}).status,503);});
+test('public configuration exposes only site key',async()=>{assert.deepEqual(await onRequestGet({env}).json(),{siteKey:'0x4AAAAAAFo4dXCxF6ZlPYBa',ready:true});assert.deepEqual(await onRequestGet({env:{}}).json(),{siteKey:'0x4AAAAAAFo4dXCxF6ZlPYBa',ready:false});});

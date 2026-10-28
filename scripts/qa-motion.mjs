@@ -50,20 +50,20 @@ try{
   for(const preference of ['no-preference','reduce']){
     await b.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:preference}]});
     await navigate('/');
-    assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgba(0, 0, 0, 0)');
-    assert.equal(await b.evaluate(`document.querySelector('.nsp-header').offsetHeight`),185);
+    assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgb(29, 29, 29)');
+    assert.equal(await b.evaluate(`document.querySelector('.nsp-header').offsetHeight`),60);
     await b.evaluate('scrollTo(0,120)');await pause(40);
     const intermediate=await b.evaluate(`document.querySelector('.nsp-header').getBoundingClientRect().height`);
-    assert.ok(intermediate>60&&intermediate<185,'Header shrinks through intermediate sizes');
+    assert.equal(intermediate,60,'Header starts compact and does not resize');
     await pause(250);
     assert.equal(await b.evaluate(`document.querySelector('.nsp-header').offsetHeight`),60);
     assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgb(29, 29, 29)');
     await b.evaluate('scrollTo(0,0)');await pause(300);
-    assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgba(0, 0, 0, 0)');
-    // Footer About is inactive on Home, so its bar can grow from 8px to 12px.
-    const footer=await hover('.znpb-footer-smart-area .elm-cmlist li:nth-child(2) a','::before');
-    assert.equal(footer.before.width,8);assert.equal(footer.after.width,12);
-    assert.ok(footer.during.width>8&&footer.during.width<12,'Footer bar grows smoothly');
+    assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgb(29, 29, 29)');
+    const footer=await hover('.nsp-footer-nav a[href="/about/"]');
+    assert.notEqual(footer.before.color,footer.after.color);
+    assert.notEqual(footer.during.color,footer.before.color,'Footer color interpolates');
+    assert.notEqual(footer.during.color,footer.after.color);
     const image=await hover('.gridPhotoGallery__link','','.gridPhotoGallery__link img');
     assert.ok(image.before.opacity<image.after.opacity,'Gallery image fades on hover');
     assert.ok(image.during.opacity>image.before.opacity&&image.during.opacity<image.after.opacity,'Image opacity interpolates');
@@ -97,13 +97,13 @@ try{
     await fs.writeFile(`docs/reference/motion/our-work-${width}.png`,Buffer.from(screenshot.data,'base64'));
   }
   await navigate('/about/',390);
-  assert.equal(await b.evaluate(`Math.round(document.querySelector('.nsp-header').offsetHeight)`),91);
+  assert.equal(await b.evaluate(`Math.round(document.querySelector('.nsp-header').offsetHeight)`),60);
   assert.equal(await b.evaluate(`getComputedStyle(document.querySelector('.nsp-header')).backgroundColor`),'rgb(29, 29, 29)');
   await b.evaluate('scrollTo(0,120)');await pause(300);
   assert.equal(await b.evaluate(`document.querySelector('.nsp-header').offsetHeight`),60);
   await b.evaluate('scrollTo(0,0)');await pause(300);
-  assert.equal(await b.evaluate(`Math.round(document.querySelector('.nsp-header').offsetHeight)`),91);
+  assert.equal(await b.evaluate(`Math.round(document.querySelector('.nsp-header').offsetHeight)`),60);
   assert.equal(b.errors.length,0,JSON.stringify(b.errors));
   await fs.writeFile('docs/evidence/motion-results.json',JSON.stringify({results,errors:b.errors},null,2)+'\n');
-  console.log('PASS: original hover interpolation in both motion preferences; transparent/shrinking desktop header and mobile flow; gap-free masonry at nine sizes; animated resizing and sorting; immediate native scrolling.');
+  console.log('PASS: original hover interpolation in both motion preferences; compact fixed-size header and mobile flow; gap-free masonry at nine sizes; animated resizing and sorting; immediate native scrolling.');
 }finally{await b.close();}

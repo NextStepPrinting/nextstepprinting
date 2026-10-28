@@ -14,7 +14,7 @@ async function size(width){
 }
 
 async function state(){
-  return b.evaluate(`(()=>{const nav=document.querySelector('#nsp-menu');const toggle=document.querySelector('.nsp-menu-toggle');return {width:innerWidth,hidden:nav.hidden,inert:nav.inert,toggle:getComputedStyle(toggle).display,expanded:toggle.getAttribute('aria-expanded'),background:getComputedStyle(nav).backgroundColor,overflow:document.body.style.overflow,logo:document.querySelector('.nsp-logo').getBoundingClientRect().toJSON(),nav:nav.getBoundingClientRect().toJSON(),links:[...nav.querySelectorAll('a')].map(e=>({text:e.textContent,rect:e.getBoundingClientRect().toJSON(),weight:getComputedStyle(e).fontWeight,color:getComputedStyle(e).color})),active:nav.querySelector('[aria-current]')?.textContent,copyright:document.querySelector('.eluid5c7ce351').innerText.trim()};})()`);
+  return b.evaluate(`(()=>{const nav=document.querySelector('#nsp-menu');const toggle=document.querySelector('.nsp-menu-toggle');return {width:innerWidth,hidden:nav.hidden,inert:nav.inert,toggle:getComputedStyle(toggle).display,expanded:toggle.getAttribute('aria-expanded'),background:getComputedStyle(nav).backgroundColor,overflow:document.body.style.overflow,logo:document.querySelector('.nsp-logo').getBoundingClientRect().toJSON(),nav:nav.getBoundingClientRect().toJSON(),links:[...nav.querySelectorAll('a')].map(e=>({text:e.textContent,rect:e.getBoundingClientRect().toJSON(),weight:getComputedStyle(e).fontWeight,color:getComputedStyle(e).color})),active:nav.querySelector('[aria-current]')?.textContent,copyright:document.querySelector('.nsp-footer-copyright').innerText.trim()};})()`);
 }
 
 function checkRow(s){
@@ -83,18 +83,13 @@ try{
   const contact=[];
   for(const width of [1440,768,390]){
     await size(width);
-    const email=await b.evaluate(`(()=>{const a=document.querySelector('#eluiddc2f4b0b a[href^="mailto:"]');return {color:getComputedStyle(a).color,href:a.getAttribute('href'),otherEmailColor:getComputedStyle(document.querySelector('.eluid9a6dd8cb a')).color};})()`);
-    assert.equal(email.color,'rgb(255, 255, 255)');assert.equal(email.href,'mailto:info@nextstepprinting.com');
-    assert.notEqual(email.otherEmailColor,'rgb(255, 255, 255)','Lower email stays readable on its light background');
+    const email=await b.evaluate(`(()=>{const a=document.querySelector('.nsp-contact-main a[href^="mailto:"]');return {color:getComputedStyle(a).color,href:a.getAttribute('href')};})()`);
+    assert.equal(email.color,'rgb(54, 56, 59)');assert.equal(email.href,'mailto:info@nextstepprinting.com');
     contact.push({width,...email});
-    if(width===1440){
-      const rect=await b.evaluate(`(()=>{const r=document.querySelector('#eluiddc2f4b0b').getBoundingClientRect();return {x:r.x,y:r.y+scrollY,width:r.width,height:r.height,scale:1};})()`);
-      const shot=await b.send('Page.captureScreenshot',{format:'png',clip:rect,captureBeyondViewport:true});
-      await fs.writeFile('docs/reference/navigation/contact-strip.png',Buffer.from(shot.data,'base64'));
-    }
+
   }
   assert.equal(b.errors.length,0,JSON.stringify(b.errors));
   const filename=base.startsWith('http://127.')?'docs/evidence/navigation-results.json':'docs/reference/live-navigation-results.json';
   await fs.writeFile(filename,JSON.stringify({base,results,hoverResults,contact,errors:b.errors},null,2)+'\n');
-  console.log('PASS: horizontal/compact navigation, white bold overlay text, center-out hover underline without highlighting, keyboard/resize/scroll locks, contact-strip email, and all footer endings.');
+  console.log('PASS: horizontal/compact navigation, white bold overlay text, center-out hover underline without highlighting, keyboard/resize/scroll locks, contact-card email, and all footer endings.');
 }finally{await b.close();}

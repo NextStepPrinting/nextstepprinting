@@ -11,7 +11,7 @@ try {
     'dev' { & $runtime scripts/serve.mjs | Out-Host }
     'build' { & $runtime scripts/build.mjs | Out-Host }
     'check' { & $runtime scripts/check.mjs | Out-Host }
-    'test' { & $runtime --test tests/quote.test.mjs | Out-Host }
+    'test' { $projectTests=Get-ChildItem -LiteralPath tests -Filter '*.test.mjs' | ForEach-Object FullName; & $runtime --test $projectTests | Out-Host }
   }
   if($LASTEXITCODE -ne 0){throw "Task failed with exit code $LASTEXITCODE"}
 } finally { $env:ELECTRON_RUN_AS_NODE=$previous }

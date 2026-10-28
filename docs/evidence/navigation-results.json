@@ -139,7 +139,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -280,7 +280,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -421,7 +421,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -562,7 +562,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -703,7 +703,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -844,7 +844,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -985,7 +985,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -1126,7 +1126,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -1267,7 +1267,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -1408,7 +1408,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     },
     {
@@ -1549,7 +1549,7 @@
           }
         ],
         "active": "Home",
-        "copyright": "© 2022 NEXT STEP PRINTING | ALL RIGHTS RESERVED"
+        "copyright": "© 2022 NEXT STEP PRINTING | All rights reserved"
       }
     }
   ],
@@ -1563,7 +1563,7 @@
         "background": "rgba(0, 0, 0, 0)"
       },
       "during": {
-        "scale": 0.30869,
+        "scale": 0.401112,
         "width": 138.281,
         "origin": 69.1406,
         "background": "rgba(0, 0, 0, 0)"
@@ -1584,7 +1584,7 @@
         "background": "rgba(0, 0, 0, 0)"
       },
       "during": {
-        "scale": 0.308372,
+        "scale": 0.308264,
         "width": 89.4844,
         "origin": 44.7422,
         "background": "rgba(0, 0, 0, 0)"
@@ -1600,21 +1600,18 @@
   "contact": [
     {
       "width": 1440,
-      "color": "rgb(255, 255, 255)",
-      "href": "mailto:info@nextstepprinting.com",
-      "otherEmailColor": "rgb(0, 0, 0)"
+      "color": "rgb(54, 56, 59)",
+      "href": "mailto:info@nextstepprinting.com"
     },
     {
       "width": 768,
-      "color": "rgb(255, 255, 255)",
-      "href": "mailto:info@nextstepprinting.com",
-      "otherEmailColor": "rgb(0, 0, 0)"
+      "color": "rgb(54, 56, 59)",
+      "href": "mailto:info@nextstepprinting.com"
     },
     {
       "width": 390,
-      "color": "rgb(255, 255, 255)",
-      "href": "mailto:info@nextstepprinting.com",
-      "otherEmailColor": "rgb(0, 0, 0)"
+      "color": "rgb(54, 56, 59)",
+      "href": "mailto:info@nextstepprinting.com"
     }
   ],
   "errors": []

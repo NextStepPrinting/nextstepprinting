@@ -109,7 +109,9 @@
       "/assets/styles/b2838333-print.css",
       "/assets/styles/68dc703f-zn_dynamic.css"
     ],
-    "forms": 0
+    "forms": 0,
+    "localForms": 1,
+    "localFormEndpoint": "/api/contact"
   },
   {
     "route": "/portfolio/misc/",

@@ -144,27 +144,49 @@ if(imageLinks.length){
   dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
   dialog.addEventListener('close',()=>{document.body.style.overflow=previousOverflow;returnFocus?.focus({preventScroll:true});});
 }
-const form=document.querySelector('[data-quote-form]');
+const form=document.querySelector('[data-quote-form],[data-contact-form]');
 if(form){
+  const formKind=form.hasAttribute('data-contact-form')?'contact':'quote';
   const status=form.querySelector('[data-form-status]');const button=form.querySelector('button[type="submit"],button:not([type])');
   const submitId=form.elements.submissionId;submitId.value=crypto.randomUUID();
-  let widget,turnstileReady=false;
+  let widget,turnstileReady=false,deliveryReady=false;
   const say=(text,error=false)=>{status.textContent=text;status.dataset.error=String(error);};
+  const unavailable=()=>say(formKind==='contact'?'Online messaging is currently unavailable. Please use the email link above. Your entries will stay here.':'The quote form is temporarily unavailable. Please email info@nextstepprinting.com. Your entries will stay here.',true);
   // Preserve the form in memory on every failure; never store personal data in browser storage.
   fetch('/api/form-config').then(async response=>{if(!response.ok)throw new Error();return response.json();}).then(config=>{
     if(!config.siteKey)throw new Error();
-    const slot=document.createElement('div');slot.className='col-sm-12';form.querySelector('.zn_submit_container').parentElement.before(slot);
-    window.nspCaptchaReady=()=>{widget=window.turnstile.render(slot,{sitekey:config.siteKey,action:'quote',theme:'dark'});turnstileReady=true;};
+    deliveryReady=config.ready!==false;
+    if(!deliveryReady)unavailable();
+    let slot=form.querySelector('[data-verification]');
+    if(!slot){slot=document.createElement('div');slot.className='col-sm-12';form.querySelector('.zn_submit_container').parentElement.before(slot);}
+    slot.style.display='block';
+    window.nspCaptchaReady=()=>{
+      let widgetSize;
+      const render=()=>{
+        const style=getComputedStyle(slot);
+        const availableWidth=slot.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight);
+        const size=availableWidth<300?'compact':'flexible';
+        if(widget!==undefined&&size===widgetSize)return;
+        if(widget!==undefined)window.turnstile.remove(widget);
+        widgetSize=size;
+        widget=window.turnstile.render(slot,{sitekey:config.siteKey,action:formKind,theme:formKind==='contact'?'light':'dark',size,
+          'expired-callback':()=>say('Verification expired. Please complete it again before sending.',true),
+          'error-callback':()=>say('Verification could not be completed. Please try again.',true)});
+        turnstileReady=true;
+      };
+      render();new ResizeObserver(render).observe(slot);
+    };
     const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?onload=nspCaptchaReady&render=explicit';script.async=true;script.onerror=()=>say('Verification could not load. Please try again or email info@nextstepprinting.com.',true);document.head.append(script);
-  }).catch(()=>say('The quote form is temporarily unavailable. Please email info@nextstepprinting.com. Your entries will stay here.',true));
+  }).catch(unavailable);
   form.addEventListener('submit',async event=>{
     event.preventDefault();if(!form.reportValidity())return;
+    if(!deliveryReady){unavailable();return;}
     if(!turnstileReady){say('Verification is unavailable. Please try again or email info@nextstepprinting.com.',true);return;}
     const token=window.turnstile.getResponse(widget);if(!token){say('Please complete the verification before sending.',true);return;}
     const data=Object.fromEntries(new FormData(form));data.turnstileToken=token;
     button.disabled=true;say('Sending your message…');
     try{
-      const response=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(20000)});
+      const response=await fetch(form.getAttribute('action'),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(20000)});
       const result=await response.json();if(!response.ok||result.ok!==true)throw new Error(result.message||'Your message could not be sent. Please try again.');
       say('Thank you! Your message has been sent. Our team will get back to you.');form.reset();submitId.value=crypto.randomUUID();
     }catch(error){say(error.name==='TimeoutError'?'The request timed out. Your entries are preserved. Please try again.':error.message||'Unable to send. Your entries are preserved. Please try again.',true);}

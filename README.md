@@ -2,6 +2,8 @@
 
 Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to static HTML with Cloudflare Pages Functions and Resend. All 15 publicly linked pages are recreated. **The owner-created Pages review copy is live; real email delivery needs configuration.** See [migration status](docs/migration-status.md) for evidence and remaining checks.
 
+The owner-approved Contact page and shared footer follow the supplied mockup, using Footer Option B. Navigation starts in the same compact 60px state across the site. Preview locally at `http://127.0.0.1:4173/contact/` with `npm run dev` or the Windows helper below.
+
 ## Editing in VS Code
 
 - `public/index.html`: home page.
@@ -12,10 +14,11 @@ Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to s
 - `public/assets/images/YYYY/MM/`: original images and responsive derivatives, with original filenames.
 - `public/assets/fonts/`: local Montserrat and original icon fonts.
 - `public/assets/styles/*-layout.css`: original page-specific layouts. [Page inventory](docs/page-inventory.json) maps routes to styles; other captured CSS supplies original grid, typography, and components.
-- `functions/api/quote.js`: server-side validation, Turnstile verification, and Resend delivery.
+- `functions/api/quote.js`, `functions/api/contact.js`: quote/contact Pages Functions.
+- `functions/_lib/message.js`: shared server-side validation, Turnstile verification, and Resend delivery.
 - `functions/api/form-config.js`: exposes only the public captcha site key when delivery is configured.
 
-Edit `public/`, not generated `dist/`. Text, images, and links are directly editable HTML. Headers/footers are currently repeated across pages, so shared changes require updating all 15 files. Original visual class names remain for fidelity. Captured CSS is standalone: WordPress, PHP, jQuery, the original host, and theme scripts are not required. Retain third-party license notices.
+Edit `public/`, not generated `dist/`. Text, images, and links are directly editable HTML. Headers/footers are currently repeated across pages, so shared changes require updating all 15 files. The compact footer is the semantic `.nsp-footer` block; its styles and the Contact redesign are scoped in `site.css`. Original visual class names remain elsewhere for fidelity. Captured CSS is standalone: WordPress, PHP, jQuery, the original host, and theme scripts are not required. Retain third-party license notices.
 
 Our Work uses a small masonry routine in `site.js`; its columns and animated positioning are styled in `site.css`. Original hover effects remain in the captured layout/component CSS. Small hover feedback remains enabled with reduced-motion preferences, while spatial transitions are shorter and automatic carousel movement is suppressed. Window scrolling stays native.
 
@@ -70,7 +73,7 @@ References: [static HTML](https://developers.cloudflare.com/pages/framework-guid
 
 ## Form setup
 
-The original quote form has six required fields: Name, Email, Phone, City, Project Type (free text), and Project Details. **No upload field exists.** The contact page uses email links, with no separate form.
+The original quote form has six required fields: Name, Email, Phone, City, Project Type (free text), and Project Details. **No upload field exists.** The proposed Contact form uses Name, Email, optional Phone, Subject, and Message. Its implemented `/api/contact` Pages Function reuses the same Resend service and `QUOTE_FROM`/`QUOTE_TO` configuration as `/api/quote`; no second paid service or invented delivery address is used. The original Contact page had only email links; the form is a new, explicitly requested feature.
 
 Configure separately for each approved preview/production environment:
 
@@ -80,9 +83,13 @@ Configure separately for each approved preview/production environment:
 | `QUOTE_FROM` | Server-side variable | Owner-confirmed address on a Resend-verified domain |
 | `QUOTE_TO` | Server-side variable | Owner-confirmed recipient |
 | `TURNSTILE_SECRET_KEY` | Cloudflare secret | Spam verification |
-| `TURNSTILE_SITE_KEY` | Public variable | Captcha widget restricted to approved hostnames |
+| `TURNSTILE_HOSTNAMES` | Server-side variable | Explicit comma-separated frontend allowlist; defaults to `nextstepprinting.pages.dev` |
 
-The public business email `info@nextstepprinting.com` is preserved in visible links, but is **not assumed as recipient or verified sender**. No other project's credentials are reused. Do not put secrets in Git or chat. Restrict Turnstile to actual approved hostnames; the handler checks hostname and `quote` action.
+The public business email `info@nextstepprinting.com` is preserved in visible links, but is **not assumed as recipient or verified sender**. No other project's credentials are reused. Do not put secrets in Git or chat. Restrict Turnstile to actual approved hostnames; the shared handler checks hostname and the route-specific `quote` or `contact` action. Both forms use the configured business inbox; a different Contact destination would need an explicit routing change.
+
+The existing widget's public site key is `0x4AAAAAAFo4dXCxF6ZlPYBa`, stored in `functions/_lib/turnstile.js`; it does not need a Pages variable. The owner confirmed its matching secret is already stored in Pages as `TURNSTILE_SECRET_KEY`, and explicitly confirmed **Resend is not set up yet**. No widget was created/replaced or secret retrieved. The integration follows [Spin's existing-widget flow](https://developers.cloudflare.com/turnstile/spin/prompt.md) using the existing Pages secret destination. Widget rendering is independent of email readiness; `/api/form-config` exposes only the public key and a boolean `ready`. Incomplete sending configuration fails closed. Hostname validation uses an explicit allowlist and excludes localhost from production. Keep `nextstepprinting.pages.dev` in the widget's allowed hostnames. Add future approved production hosts in both the widget and `TURNSTILE_HOSTNAMES` before domain cutover.
+
+Turnstile renders explicitly per form with `quote`/`contact` actions, expires/errors visibly, resets after every submission attempt, and switches to compact display when space is narrow. Backend acceptance requires `success === true`, the expected action, and the exact approved request hostname. Mocks cover replay rejection; real successful submission/replay remains pending separate email-test authorization.
 
 The server bounds requests, validates fields, checks origin, rejects a honeypot, verifies captcha, sends plain text, and controls recipient/sender. [Resend](https://resend.com/docs/api-reference/emails/send-email) idempotency keys protect retries. Success requires Resend acceptance with an email ID; this does not guarantee inbox delivery. Errors preserve input in current-page memory; personal data is not saved to browser storage.
 
@@ -100,11 +107,13 @@ Wrangler 4.154.0 successfully compiled and served the migration locally. With th
 
 `npm run check` checks local references, forbidden dependencies, and secret patterns. `npm test` exercises the real handler with provider mocks. `scripts/browser.mjs` and `scripts/qa.mjs` are Windows/Edge-specific QA helpers; start the static server first. They are not hosted dependencies.
 
-`node scripts/qa-motion.mjs` additionally verifies hover interpolation in both motion preferences, transparent/shrinking header states, gap-free masonry across breakpoints, animated resize/sort behavior, and immediate native scrolling.
+`node scripts/qa-motion.mjs` additionally verifies hover interpolation in both motion preferences, compact fixed-size header states, gap-free masonry across breakpoints, animated resize/sort behavior, and immediate native scrolling.
 
 `node scripts/qa-lightbox.mjs` checks borderless viewer layout, controls at desktop/mobile widths, pointer/keyboard navigation, closing, and focus/scroll restoration.
 
 `node scripts/qa-navigation.mjs` checks desktop link fitting, the compact orange menu, mode changes/keyboard controls, and the copyright line on all 15 pages. An optional URL argument checks an approved remote review site instead of localhost.
+
+`node scripts/qa-contact-footer.mjs` checks the local redesign at 1440/768/390/320px across all 15 pages, footer links/wrapping, contact cards/form labels/sticky header, and contact submission states with intercepted providers. It also compares the other 14 pages against a local pre-change main-content snapshot. The mockup's unverified opening hours and extra policy links are intentionally omitted. Google Maps links use the [documented cross-platform URL format](https://developers.google.com/maps/documentation/urls/get-started), with no map API key or embed dependency.
 
 `scripts/inspect.mjs` and `scripts/import-original.mjs` are one-time provenance tools, **not build commands**. The importer overwrites HTML; never rerun it over edited pages. Ignored `docs/reference/` contains raw originals, 45 original screenshots, local comparisons, and detailed QA logs. Tracked page/asset inventories summarize the capture.
 

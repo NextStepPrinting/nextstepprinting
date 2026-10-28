@@ -4,17 +4,14 @@ body { overflow-x:hidden; }
 [hidden] { display:none !important; }
 .zn-animateInViewport { opacity:1 !important; visibility:visible !important; transform:none !important; animation:none !important; }
 .zn-bgSource > .zn-bgSource-image { position:absolute; inset:0; min-height:100%; }
-.nsp-header { position:fixed; z-index:100; top:0; left:0; width:100%; background:transparent; transition:background-color .2s ease-out; }
-.nsp-header-inner { width:90%; height:185px; margin:auto; padding:0 15px; display:flex; align-items:center; justify-content:space-between; transition:height .2s ease-out; }
-.nsp-logo { display:block; width:554.47px; max-width:75%; transition:width .2s ease-out; }
-.nsp-logo img { display:block; width:100%; height:123px; object-fit:contain; transition:height .2s ease-out; }
+.nsp-header { position:fixed; z-index:100; top:0; left:0; width:100%; background:#1d1d1d; }
+.nsp-header-inner { width:90%; height:60px; margin:auto; padding:0 15px; display:flex; align-items:center; justify-content:space-between; }
+.nsp-logo { display:block; width:215.24px; max-width:75%; }
+.nsp-logo img { display:block; width:100%; height:60px; object-fit:contain; }
 .nsp-stuck .nsp-header { background:#1d1d1d; }
 .nsp-stuck .nsp-header-inner { height:60px; }
 .nsp-stuck .nsp-logo { width:215.24px; }
 .nsp-stuck .nsp-logo img { height:60px; }
-.znpb-footer-smart-area a[href^="mailto:"] { color:inherit; }
-/* Contact page's orange contact-details strip. */
-#eluiddc2f4b0b a[href^="mailto:"] { color:#fff; }
 .nsp-menu-toggle { border:0; background:none; color:#aaa; padding:14px; cursor:pointer; transition:color .2s ease-out; }
 .nsp-menu-toggle:hover { color:#fff; }
 .nsp-menu-toggle span { display:block; height:2px; width:19px; background:currentColor; margin:4px 0; transition:transform .2s ease-out,opacity .2s ease-out; }
@@ -87,7 +84,7 @@ button:disabled { opacity:.6; cursor:wait; }
 @media(max-width:1199px) { .nsp-header-inner { width:100%; } .js-slick > li { flex-basis:33.333%; } }
 @media(max-width:992px) { .kl-ptfsortable-items { --gallery-columns:3; } }
 @media(max-width:768px) { .kl-ptfsortable-items { --gallery-columns:2; } }
-@media(max-width:767px) { .nsp-header { position:relative; background:#1d1d1d; } .nsp-header-inner { height:91.36px; padding:0 15px; } .nsp-logo { width:180px; } .nsp-logo img { height:51.36px; } .nsp-stuck #page_wrapper { padding-top:91.36px; } .nsp-stuck .nsp-header { position:fixed; } .nsp-stuck .nsp-logo { width:180px; } .nsp-stuck .nsp-logo img { height:51.36px; } .js-slick > li { flex-basis:50%; } }
+@media(max-width:767px) { .nsp-header { position:relative; background:#1d1d1d; } .nsp-header-inner { height:60px; padding:0 15px; } .nsp-logo { width:180px; } .nsp-logo img { height:51.36px; } .nsp-stuck #page_wrapper { padding-top:60px; } .nsp-stuck .nsp-header { position:fixed; } .nsp-stuck .nsp-logo { width:180px; } .nsp-stuck .nsp-logo img { height:51.36px; } .js-slick > li { flex-basis:50%; } }
 @media(max-width:480px) { .kl-ptfsortable-items { --gallery-columns:1; } }
 @media(max-width:479px) { .js-slick > li { flex-basis:100%; } }
 /* Keep small, original hover fades even when the OS reduces motion. Shorten
@@ -95,4 +92,98 @@ button:disabled { opacity:.6; cursor:wait; }
 @media(prefers-reduced-motion:reduce) {
   .nsp-header,.nsp-header-inner,.nsp-logo,.nsp-logo img { transition-duration:.12s; }
   .nsp-masonry-ready,.nsp-masonry-ready > li { transition-duration:.16s; }
+}
+
+/* Shared footer — Option B: compact brand/navigation row, then contact details. */
+.nsp-footer { background:#202122; color:#d5d6d7; padding:34px 0 24px; font-family:Montserrat,Arial,sans-serif; }
+.nsp-footer-inner { width:calc(100% - 48px); max-width:1200px; margin:0 auto; }
+.nsp-footer-top { display:grid; grid-template-columns:216px minmax(0,1fr) auto; align-items:center; gap:26px; }
+.nsp-footer-logo { display:block; }
+.nsp-footer-logo img { display:block; width:216px; max-width:100%; height:auto; }
+.nsp-footer-nav { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px 18px; }
+.nsp-footer a { color:inherit; text-decoration:none; transition:color .18s ease-out; }
+.nsp-footer a:hover,.nsp-footer a[aria-current] { color:#ff7e00; }
+.nsp-footer-nav a { font-size:12px; line-height:1.6; white-space:nowrap; }
+.nsp-footer-socials { display:flex; align-items:center; gap:16px; border-left:1px solid #ffffff26; padding-left:22px; }
+.nsp-footer-socials a { display:grid; place-items:center; min-width:24px; min-height:32px; font-size:20px; }
+.nsp-footer .nsp-detail-icon { width:18px; height:18px; flex:0 0 18px; color:#ff7e00; }
+.nsp-detail-icon { fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.nsp-footer-contact { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px 24px; margin:24px 0 0; border-top:1px solid #ffffff26; padding-top:20px; font-style:normal; }
+.nsp-footer-contact a { display:flex; align-items:center; gap:9px; font-size:12px; line-height:1.7; }
+.nsp-footer-contact a:not(:first-child) { border-left:1px solid #ffffff26; padding-left:24px; }
+.nsp-footer-contact a:not(.nsp-footer-address) { white-space:nowrap; }
+.nsp-footer-address > span > span { display:inline-block; }
+.nsp-footer-copyright { margin:22px 0 0; text-align:center; color:#a8aaad; font-size:11px; line-height:1.8; }
+@media(max-width:1000px) {
+  .nsp-footer-top { grid-template-columns:minmax(0,1fr) auto; gap:22px; }
+  .nsp-footer-nav { grid-column:1 / -1; grid-row:2; }
+  .nsp-footer-socials { border:0; padding-left:0; }
+  .nsp-footer-contact { gap:14px 18px; }
+  .nsp-footer-contact a:not(:first-child) { padding-left:18px; }
+}
+@media(max-width:700px) {
+  .nsp-footer { padding:28px 0 22px; }
+  .nsp-footer-inner { width:calc(100% - 40px); }
+  .nsp-footer-logo img { width:184px; }
+  .nsp-footer-nav { gap:10px 18px; }
+  .nsp-footer-contact { flex-direction:column; gap:12px; }
+  .nsp-footer-contact a { justify-content:center; text-align:center; }
+  .nsp-footer-contact a:not(:first-child) { border:0; padding:0; }
+}
+
+/* Contact page: scoped navigation contrast and layout; other page mains retain
+   their original layout and styling. */
+.nsp-contact-page #page_wrapper { overflow:clip; }
+.nsp-contact-page .nsp-header,.nsp-contact-page.nsp-stuck .nsp-header { position:sticky; top:0; background:#1d1d1d; }
+.nsp-contact-page.nsp-stuck #page_wrapper { padding-top:0; }
+.nsp-contact-main { background:#fff; color:#282a2e; font-family:Montserrat,Arial,sans-serif; }
+.nsp-contact-container { width:calc(100% - 48px); max-width:1160px; margin:0 auto; }
+.nsp-contact-hero { min-height:320px; display:flex; align-items:center; background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.18) 70%),url('/assets/images/2022/03/NSP_Home.jpg') center 58% / cover no-repeat; color:#fff; }
+.nsp-contact-hero .nsp-contact-container { padding-top:40px; padding-bottom:40px; }
+.nsp-contact-hero h1 { margin:0 0 14px; color:#fff; font:700 clamp(34px,4vw,50px)/1.15 Montserrat,Arial,sans-serif; letter-spacing:-.025em; }
+.nsp-contact-hero p { max-width:430px; margin:0; font-size:16px; line-height:1.75; }
+.nsp-contact-content { padding-top:44px; padding-bottom:64px; }
+.nsp-contact-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.nsp-contact-card { display:flex; flex-direction:column; align-items:center; text-align:center; padding:28px 18px; border:1px solid #eceef0; border-radius:6px; box-shadow:0 3px 16px #20212206; }
+.nsp-card-icon { display:grid; place-items:center; width:48px; height:48px; border-radius:50%; color:#fff; background:#ff7e00; margin-bottom:16px; }
+.nsp-card-icon .nsp-detail-icon { width:25px; height:25px; }
+.nsp-contact-card > div:last-child { display:flex; flex:1; flex-direction:column; width:100%; }
+.nsp-contact-card h2 { margin:0 0 12px; font:700 16px/1.5 Montserrat,Arial,sans-serif; color:#222; }
+.nsp-contact-card-link { display:flex; flex:1; flex-direction:column; align-items:center; justify-content:space-between; gap:22px; color:#36383b; font-size:14px; line-height:1.7; }
+.nsp-contact-card-link:hover { color:#b94e00; text-decoration:none; }
+.nsp-card-action { display:inline-block; padding:7px 16px; border:1px solid #ff7e00; border-radius:4px; font-size:12px; color:#36383b; transition:background-color .18s ease-out,color .18s ease-out; }
+.nsp-contact-card-link:hover .nsp-card-action { background:#fff4e8; color:#a94a00; }
+.nsp-contact-message { border-top:1px solid #e4e7eb; margin-top:42px; padding-top:34px; }
+.nsp-message-heading { text-align:center; margin-bottom:28px; }
+.nsp-message-heading h2 { margin:0 0 12px; font:700 26px/1.35 Montserrat,Arial,sans-serif; color:#222; letter-spacing:-.02em; }
+.nsp-message-heading p { margin:0; color:#626b77; font-size:14px; line-height:1.8; }
+.nsp-contact-form { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 24px; }
+.nsp-contact-field { min-width:0; }
+.nsp-contact-field label { display:block; margin:0 0 8px; font-size:13px; line-height:1.5; font-weight:700; }
+.nsp-optional { color:#727982; font-weight:400; }
+.nsp-contact-field input,.nsp-contact-field textarea { display:block; width:100%; max-width:100%; box-sizing:border-box; margin:0; padding:12px 14px; border:1px solid #d9dfe6; border-radius:4px; box-shadow:none; background:#fff; color:#282a2e; font:400 14px/1.5 Montserrat,Arial,sans-serif; transition:border-color .18s ease-out,box-shadow .18s ease-out; }
+.nsp-contact-field textarea { min-height:136px; resize:vertical; }
+.nsp-contact-field input:focus,.nsp-contact-field textarea:focus { border-color:#ff7e00; outline:2px solid #ff7e0033; outline-offset:1px; }
+.nsp-contact-field input::placeholder,.nsp-contact-field textarea::placeholder { color:#7b8490; opacity:1; }
+.nsp-field-wide { grid-column:1 / -1; }
+.nsp-verification:empty,.nsp-form-status:empty { display:none; }
+.nsp-contact-form .nsp-form-status { padding:0; margin:0; font-size:13px; line-height:1.7; color:#4f5964; }
+.nsp-contact-form .nsp-form-status[data-error=true] { color:#963d0d; }
+.nsp-send-message { padding:13px 20px; border:1px solid #ff7e00; border-radius:4px; background:#ff7e00; color:#1d1d1d; font:700 14px/1.5 Montserrat,Arial,sans-serif; cursor:pointer; transition:background-color .18s ease-out; }
+.nsp-send-message:hover { background:#ee7300; }
+@media(max-width:767px) {
+  .nsp-contact-container { width:calc(100% - 40px); }
+  .nsp-contact-hero { min-height:270px; align-items:flex-end; background-position:62% center; background-image:linear-gradient(0deg,rgba(0,0,0,.88),rgba(0,0,0,.05) 90%),url('/assets/images/2022/03/NSP_Home.jpg'); }
+  .nsp-contact-hero .nsp-contact-container { padding-top:110px; padding-bottom:24px; }
+  .nsp-contact-hero p { font-size:14px; line-height:1.7; max-width:330px; }
+  .nsp-contact-content { padding-top:8px; padding-bottom:40px; }
+  .nsp-contact-cards { grid-template-columns:1fr; gap:0; }
+  .nsp-contact-card { flex-direction:row; align-items:flex-start; gap:16px; text-align:left; border:0; border-bottom:1px solid #e4e7eb; border-radius:0; box-shadow:none; padding:24px 0; }
+  .nsp-card-icon { width:42px; height:42px; flex:0 0 42px; margin:0; }
+  .nsp-contact-card h2 { margin-bottom:5px; }
+  .nsp-contact-card-link { align-items:flex-start; gap:12px; font-size:13px; }
+  .nsp-contact-message { border:0; margin-top:0; padding-top:28px; }
+  .nsp-message-heading { text-align:left; margin-bottom:24px; }
+  .nsp-message-heading h2 { font-size:23px; }
+  .nsp-contact-form { grid-template-columns:1fr; gap:18px; }
 }

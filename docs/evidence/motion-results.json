@@ -2,32 +2,32 @@
   "results": [
     {
       "preference": "no-preference",
-      "headerIntermediateHeight": 137.703125,
+      "headerIntermediateHeight": 60,
       "footer": {
-        "selector": ".znpb-footer-smart-area .elm-cmlist li:nth-child(2) a",
-        "pseudo": "::before",
+        "selector": ".nsp-footer-nav a[href=\"/about/\"]",
+        "pseudo": "",
         "before": {
-          "opacity": 0.05,
-          "width": 8,
-          "duration": "0.15s",
-          "color": "rgb(181, 181, 181)",
-          "background": "rgb(224, 30, 30)",
-          "border": "rgb(181, 181, 181)"
+          "opacity": 1,
+          "width": 37.2031,
+          "duration": "0.18s",
+          "color": "rgb(213, 214, 215)",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(213, 214, 215)"
         },
         "during": {
-          "opacity": 0.513212,
-          "width": 9.9375,
-          "duration": "0.15s",
-          "color": "rgb(217, 154, 93)",
-          "background": "rgb(224, 30, 30)",
-          "border": "rgb(217, 154, 93)"
+          "opacity": 1,
+          "width": 37.2031,
+          "duration": "0.18s",
+          "color": "rgb(230, 177, 126)",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(230, 177, 126)"
         },
         "after": {
           "opacity": 1,
-          "width": 12,
-          "duration": "0.15s",
+          "width": 37.2031,
+          "duration": "0.18s",
           "color": "rgb(255, 126, 0)",
-          "background": "rgb(224, 30, 30)",
+          "background": "rgba(0, 0, 0, 0)",
           "border": "rgb(255, 126, 0)"
         }
       },
@@ -43,7 +43,7 @@
           "border": "rgb(0, 0, 0)"
         },
         "during": {
-          "opacity": 0.519146,
+          "opacity": 0.51906,
           "width": 345.25,
           "duration": "0.4s",
           "color": "rgb(255, 126, 0)",
@@ -94,32 +94,32 @@
     },
     {
       "preference": "reduce",
-      "headerIntermediateHeight": 133.015625,
+      "headerIntermediateHeight": 60,
       "footer": {
-        "selector": ".znpb-footer-smart-area .elm-cmlist li:nth-child(2) a",
-        "pseudo": "::before",
+        "selector": ".nsp-footer-nav a[href=\"/about/\"]",
+        "pseudo": "",
         "before": {
-          "opacity": 0.05,
-          "width": 8,
-          "duration": "0.15s",
-          "color": "rgb(181, 181, 181)",
-          "background": "rgb(224, 30, 30)",
-          "border": "rgb(181, 181, 181)"
+          "opacity": 1,
+          "width": 37.2031,
+          "duration": "0.18s",
+          "color": "rgb(213, 214, 215)",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(213, 214, 215)"
         },
         "during": {
-          "opacity": 0.514182,
-          "width": 9.95312,
-          "duration": "0.15s",
-          "color": "rgb(217, 154, 93)",
-          "background": "rgb(224, 30, 30)",
-          "border": "rgb(217, 154, 93)"
+          "opacity": 1,
+          "width": 37.2031,
+          "duration": "0.18s",
+          "color": "rgb(235, 167, 100)",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "rgb(235, 167, 100)"
         },
         "after": {
           "opacity": 1,
-          "width": 12,
-          "duration": "0.15s",
+          "width": 37.2031,
+          "duration": "0.18s",
           "color": "rgb(255, 126, 0)",
-          "background": "rgb(224, 30, 30)",
+          "background": "rgba(0, 0, 0, 0)",
           "border": "rgb(255, 126, 0)"
         }
       },
@@ -135,7 +135,7 @@
           "border": "rgb(0, 0, 0)"
         },
         "during": {
-          "opacity": 0.519119,
+          "opacity": 0.519207,
           "width": 345.25,
           "duration": "0.4s",
           "color": "rgb(255, 126, 0)",
@@ -917,7 +917,7 @@
         "moving": {
           "width": 900,
           "columns": 3,
-          "height": 773,
+          "height": 779,
           "items": [
             {
               "title": "Race Vehicles",
@@ -929,15 +929,15 @@
             },
             {
               "title": "Moab Table Wraps",
-              "x": 345.7442932128906,
+              "x": 342.1587829589844,
               "y": 0,
-              "width": 301.6562194824219,
+              "width": 301.6562805175781,
               "height": 335.046875,
               "transition": "0.4s"
             },
             {
               "title": "Project X SEMA Booth",
-              "x": 691.4885864257812,
+              "x": 684.3175659179688,
               "y": 0,
               "width": 301.65625,
               "height": 264.625,
@@ -945,41 +945,41 @@
             },
             {
               "title": "Rhys Millen Racing",
-              "x": 801.719482421875,
-              "y": 67.8402099609375,
+              "x": 736.5037841796875,
+              "y": 83.52734375,
               "width": 301.65625,
               "height": 241.15625,
               "transition": "0.4s"
             },
             {
               "title": "Encore Gas and Supply",
-              "x": 157.0089111328125,
-              "y": 296.23004150390625,
+              "x": 193.3150634765625,
+              "y": 295.2860107421875,
               "width": 301.65625,
               "height": 264.625,
               "transition": "0.4s"
             },
             {
               "title": "Trailers / RV’s / Buses",
-              "x": 880.2239379882812,
-              "y": 314.9840087890625,
-              "width": 301.65618896484375,
+              "x": 833.1613159179688,
+              "y": 318.242919921875,
+              "width": 301.65631103515625,
               "height": 264.625,
               "transition": "0.4s"
             },
             {
               "title": "Booths / Buildings / Walls",
-              "x": 534.4796752929688,
-              "y": 379.4276123046875,
-              "width": 301.65625,
-              "height": 264.625,
+              "x": 491.0025329589844,
+              "y": 391.01239013671875,
+              "width": 301.6562805175781,
+              "height": 264.62506103515625,
               "transition": "0.4s"
             },
             {
               "title": "Misc.",
-              "x": 424.2487487792969,
-              "y": 454.87548828125,
-              "width": 301.6562805175781,
+              "x": 438.81634521484375,
+              "y": 464.1793212890625,
+              "width": 301.65625,
               "height": 264.625,
               "transition": "0.4s"
             }
