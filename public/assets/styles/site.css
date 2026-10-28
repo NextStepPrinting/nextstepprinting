@@ -5,6 +5,8 @@ body { overflow-x:hidden; }
 .zn-animateInViewport { opacity:1 !important; visibility:visible !important; transform:none !important; animation:none !important; }
 .zn-bgSource > .zn-bgSource-image { position:absolute; inset:0; min-height:100%; }
 .nsp-header { position:fixed; z-index:100; top:0; left:0; width:100%; background:#1d1d1d; }
+/* Reserve the fixed navigation's height so it never covers the hero. */
+#page_wrapper { padding-top:60px; }
 .nsp-header-inner { width:90%; height:60px; margin:auto; padding:0 15px; display:flex; align-items:center; justify-content:space-between; }
 .nsp-logo { display:block; width:215.24px; max-width:75%; }
 .nsp-logo img { display:block; width:100%; height:60px; object-fit:contain; }
@@ -84,7 +86,7 @@ button:disabled { opacity:.6; cursor:wait; }
 @media(max-width:1199px) { .nsp-header-inner { width:100%; } .js-slick > li { flex-basis:33.333%; } }
 @media(max-width:992px) { .kl-ptfsortable-items { --gallery-columns:3; } }
 @media(max-width:768px) { .kl-ptfsortable-items { --gallery-columns:2; } }
-@media(max-width:767px) { .nsp-header { position:relative; background:#1d1d1d; } .nsp-header-inner { height:60px; padding:0 15px; } .nsp-logo { width:180px; } .nsp-logo img { height:51.36px; } .nsp-stuck #page_wrapper { padding-top:60px; } .nsp-stuck .nsp-header { position:fixed; } .nsp-stuck .nsp-logo { width:180px; } .nsp-stuck .nsp-logo img { height:51.36px; } .js-slick > li { flex-basis:50%; } }
+@media(max-width:767px) { #page_wrapper { padding-top:0; } .nsp-header { position:relative; background:#1d1d1d; } .nsp-header-inner { height:60px; padding:0 15px; } .nsp-logo { width:180px; } .nsp-logo img { height:51.36px; } .nsp-stuck #page_wrapper { padding-top:60px; } .nsp-stuck .nsp-header { position:fixed; } .nsp-stuck .nsp-logo { width:180px; } .nsp-stuck .nsp-logo img { height:51.36px; } .js-slick > li { flex-basis:50%; } }
 @media(max-width:480px) { .kl-ptfsortable-items { --gallery-columns:1; } }
 @media(max-width:479px) { .js-slick > li { flex-basis:100%; } }
 /* Keep small, original hover fades even when the OS reduces motion. Shorten
@@ -133,7 +135,7 @@ button:disabled { opacity:.6; cursor:wait; }
 
 /* Contact page: scoped navigation contrast and layout; other page mains retain
    their original layout and styling. */
-.nsp-contact-page #page_wrapper { overflow:clip; }
+.nsp-contact-page #page_wrapper { overflow:clip; padding-top:0; }
 .nsp-contact-page .nsp-header,.nsp-contact-page.nsp-stuck .nsp-header { position:sticky; top:0; background:#1d1d1d; }
 .nsp-contact-page.nsp-stuck #page_wrapper { padding-top:0; }
 .nsp-contact-main { background:#fff; color:#282a2e; font-family:Montserrat,Arial,sans-serif; }
