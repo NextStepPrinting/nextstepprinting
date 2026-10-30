@@ -49,3 +49,7 @@ This branch is committed locally for review. It has not been merged, pushed, or 
 `feature/website-migration` is fully contained in `main`, so it is no longer needed for active development. It is retained as a historical reference; it has not been deleted.
 
 Publishing a remote branch can automatically trigger a Cloudflare Preview deployment. Arrange that separately from this local review. A production cutover still requires explicit owner approval. Main remains the rollback reference.
+
+## First review fixes
+
+The homepage hero photo and its “Our work speaks for itself” caption now form one native link to `/our-work/`, with hover and visible keyboard-focus feedback. Responsive images now default to `height:auto`; this fixes the Services 3M dealer logo, whose intrinsic HTML height had been retained while its width shrank. The source image is unchanged. Four-width checks at 1440/768/390/320px confirm keyboard navigation and the logo's original 5:1 proportions, with no overflow or JavaScript exceptions. Evidence is in ignored `docs/reference/modern-redesign/review-fixes.json`. Static checks and build pass. These fixes remain on the local experiment branch.
