@@ -1,0 +1,268 @@
+{
+  "base": "a869189",
+  "pages": [
+    {
+      "route": "/",
+      "title": "Next Step Printing – Printing &amp; Graphic Services",
+      "canonical": "<link rel=\"canonical\" href=\"/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "cd4e2f3074d8126679d76a15237a8dacf69df5e1ee8700ccad7862fe1f0d5f95"
+    },
+    {
+      "route": "/about/",
+      "title": "About – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/about/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "a354147d3d52e7b77d8dfcac68aea78ee0188d6cfc38fe48c01715551b40568e"
+    },
+    {
+      "route": "/services/",
+      "title": "Services – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/services/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "fa0039145a9dfe8357ed937986027593f15c2fd75baa664b54f4d77e40895e35"
+    },
+    {
+      "route": "/our-work/",
+      "title": "Our Work – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/our-work/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "da5123848c3512769b5899dce780f67cf6724f19a28b1dc9e9c03edc285ec691"
+    },
+    {
+      "route": "/graphic-design/",
+      "title": "Graphic Design – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/graphic-design/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "bee38aeb7ef4d0dbc8ecd0c18825b215333e9139053a47abacda68d17d3024bc"
+    },
+    {
+      "route": "/get-a-quote/",
+      "title": "Get a Quote – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/get-a-quote/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "fc0a71709deb73b0d44f08164a620d7e21eba58f0d3f8db89e544965abbbe59a"
+    },
+    {
+      "route": "/contact/",
+      "title": "Contact – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/contact/\">",
+      "photos": 0,
+      "photoUrls": [],
+      "sourceHash": "ff0f8855f4cc09ef65140620b75a07b41c8257ffa0288a6efd4fe3f3173a19fb"
+    },
+    {
+      "route": "/portfolio/misc/",
+      "title": "Misc. – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/misc/\">",
+      "photos": 16,
+      "photoUrls": [
+        "/assets/images/2022/04/IMG_1117-scaled.jpg",
+        "/assets/images/2022/04/Liquid-Metal_Raptor_2.jpg",
+        "/assets/images/2022/04/IMG_2104-scaled.jpg",
+        "/assets/images/2022/04/IMG_2025-scaled.jpg",
+        "/assets/images/2022/04/IMG_7930-scaled.jpg",
+        "/assets/images/2022/04/IMG_0909-scaled.jpg",
+        "/assets/images/2022/04/65652386224-scaled.jpg",
+        "/assets/images/2022/04/Car-Prep_The-Voice.jpg",
+        "/assets/images/2022/04/IMG_6362-scaled.jpeg",
+        "/assets/images/2022/04/Bassett_2.jpg",
+        "/assets/images/2022/04/IMG_7656-scaled.jpeg",
+        "/assets/images/2022/04/IMG_7657-scaled.jpeg",
+        "/assets/images/2022/04/IMG_1108-scaled.jpg",
+        "/assets/images/2022/04/IMG_4939-scaled.jpg",
+        "/assets/images/2022/04/CGDr1.jpg",
+        "/assets/images/2022/04/IMG_1971-scaled.jpg"
+      ],
+      "sourceHash": "29738f7f0869a52cecc0a5312acc9d0625222caa90ed61e0190bed1e964219de"
+    },
+    {
+      "route": "/portfolio/booths-buildings-walls/",
+      "title": "Booths / Buildings / Walls – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/booths-buildings-walls/\">",
+      "photos": 15,
+      "photoUrls": [
+        "/assets/images/2022/04/IMG_9399-scaled.jpg",
+        "/assets/images/2022/04/IMG_9401-scaled.jpg",
+        "/assets/images/2022/04/858A5926-scaled.jpg",
+        "/assets/images/2022/04/858A5987-scaled.jpg",
+        "/assets/images/2022/04/Social-Booth_NCAA_2.jpg",
+        "/assets/images/2022/04/IMG_4641-scaled.jpeg",
+        "/assets/images/2022/04/IMG_1679-scaled.jpg",
+        "/assets/images/2022/04/Footjoy_5.jpg",
+        "/assets/images/2022/04/64487066929__5C6F8714-789C-4465-8C58-D930FF8CE491-scaled.jpeg",
+        "/assets/images/2022/04/Winplus-Booth_Type-S_2-scaled.jpg",
+        "/assets/images/2022/04/IMG_6189-scaled.jpg",
+        "/assets/images/2022/04/IMG_9580-scaled.jpg",
+        "/assets/images/2022/04/IMG_1005.jpeg",
+        "/assets/images/2022/04/IMG_7677-scaled.jpeg",
+        "/assets/images/2022/04/IMG_4139-scaled.jpg"
+      ],
+      "sourceHash": "984fcb071228baeab840343faeac6bee62ee41960141798630c9d11008858881"
+    },
+    {
+      "route": "/portfolio/race-vehicles/",
+      "title": "Trailers / RV’s / Buses – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/race-vehicles/\">",
+      "photos": 12,
+      "photoUrls": [
+        "/assets/images/2022/04/IMG_3317-scaled.jpeg",
+        "/assets/images/2022/04/IMG_3330-scaled.jpeg",
+        "/assets/images/2022/04/IMG_3285-scaled.jpeg",
+        "/assets/images/2022/04/New_Rig_Web.jpg",
+        "/assets/images/2022/04/IMG_1258-scaled.jpg",
+        "/assets/images/2022/04/IMG_2166-scaled.jpg",
+        "/assets/images/2022/04/IMG_9716-scaled.jpg",
+        "/assets/images/2022/04/IMG_7913-scaled.jpg",
+        "/assets/images/2022/04/IMG_0892-scaled.jpg",
+        "/assets/images/2022/04/Ryan-Trailer_2014_1.jpg",
+        "/assets/images/2022/04/RCH_1-scaled.jpg",
+        "/assets/images/2022/04/Marshalls-Bus_1.jpg"
+      ],
+      "sourceHash": "2e53fb5f72a3df2b96cadcd0c40e3438ebb8cf9229e9311c6217c6067616cefe"
+    },
+    {
+      "route": "/portfolio/encore-peterbilt/",
+      "title": "Encore Gas and Supply – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/encore-peterbilt/\">",
+      "photos": 8,
+      "photoUrls": [
+        "/assets/images/2022/03/IMG_0246-scaled.jpeg",
+        "/assets/images/2022/04/IMG_9399-scaled.jpg",
+        "/assets/images/2022/03/IMG_0909-scaled.jpg",
+        "/assets/images/2022/03/IMG_0245-scaled.jpeg",
+        "/assets/images/2022/03/IMG_4896-scaled.jpeg",
+        "/assets/images/2022/03/BNIR6433-scaled.jpeg",
+        "/assets/images/2022/04/IMG_9401-scaled.jpg",
+        "/assets/images/2022/03/IMG_3196-scaled.jpeg"
+      ],
+      "sourceHash": "47c621fa333c82c461976894ee4a617d16c57f87fc4347fe4f6b2e419c2a4c3c"
+    },
+    {
+      "route": "/portfolio/rhys-millen-jackal/",
+      "title": "Rhys Millen Racing – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/rhys-millen-jackal/\">",
+      "photos": 12,
+      "photoUrls": [
+        "/assets/images/2022/03/Rhys_X_8-scaled.jpg",
+        "/assets/images/2021/10/IMG_7095-1200.jpg",
+        "/assets/images/2022/03/Rhys_Veloster_2013.jpg",
+        "/assets/images/2022/04/New_Rig_Web.jpg",
+        "/assets/images/2022/04/IMG_0061-scaled.jpg",
+        "/assets/images/2022/04/IMG_1853-scaled.jpeg",
+        "/assets/images/2022/04/IMG_1857-scaled.jpeg",
+        "/assets/images/2022/04/Pikes_2012_1-scaled.jpg",
+        "/assets/images/2022/04/Maddo_5-scaled.jpg",
+        "/assets/images/2022/04/Veloster_Emma_1.jpg",
+        "/assets/images/2022/04/RMR_Rig_5.jpg",
+        "/assets/images/2022/04/IMG_3139-scaled.jpeg"
+      ],
+      "sourceHash": "097442319dce3d2e7927f12f0caed2d1d122f56350e7d2ce89f32c5970d7888d"
+    },
+    {
+      "route": "/portfolio/project-x-trade-show/",
+      "title": "Project X SEMA Booth – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/project-x-trade-show/\">",
+      "photos": 4,
+      "photoUrls": [
+        "/assets/images/2021/12/IMG_1097.jpg",
+        "/assets/images/2021/12/NX-Home-banner-2.jpg",
+        "/assets/images/2022/04/858A5987-scaled.jpg",
+        "/assets/images/2022/04/858A5929-scaled.jpg"
+      ],
+      "sourceHash": "20d42b803322f108490d3a81f6c08e166947cbf63f7db9b1d3b50ce9794e73b2"
+    },
+    {
+      "route": "/portfolio/bud-light-gmg-porsche-vehicle-wrap/",
+      "title": "Race Vehicles – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/bud-light-gmg-porsche-vehicle-wrap/\">",
+      "photos": 15,
+      "photoUrls": [
+        "/assets/images/2021/10/IMG_7095-1200.jpg",
+        "/assets/images/2022/04/IMG_5856-scaled.jpg",
+        "/assets/images/2022/04/Rhys_X_5-scaled.jpg",
+        "/assets/images/2022/04/IMG_4116-scaled.jpg",
+        "/assets/images/2022/04/Curtis_5.jpg",
+        "/assets/images/2022/04/IMG_4741-scaled.jpeg",
+        "/assets/images/2022/04/Maddo_5-1-scaled.jpg",
+        "/assets/images/2022/04/Papa_Scion_Foust_1-scaled.jpg",
+        "/assets/images/2022/04/Kyle-B-1.jpg",
+        "/assets/images/2021/10/10423833_880300915315679_8294581647551938860_n-1.jpg",
+        "/assets/images/2022/04/Pikes_2012_1-1-scaled.jpg",
+        "/assets/images/2022/04/IMG_5862-scaled.jpg",
+        "/assets/images/2022/04/IMG_2660-scaled.jpg",
+        "/assets/images/2022/04/IMG_9609-1-scaled.jpg",
+        "/assets/images/2022/04/IMG_8004-scaled.jpg"
+      ],
+      "sourceHash": "f78a5d64845329be4eff68811aa1c785c70327e78c1fcb0cdaaafdb11ea0fe0a"
+    },
+    {
+      "route": "/portfolio/moab-tables/",
+      "title": "Moab Table Wraps – Next Step Printing",
+      "canonical": "<link rel=\"canonical\" href=\"https://nextstepprinting.com/portfolio/moab-tables/\">",
+      "photos": 4,
+      "photoUrls": [
+        "/assets/images/2022/03/IMG_2359-scaled-e1648571889995.jpg",
+        "/assets/images/2022/03/IMG_2452-scaled.jpg",
+        "/assets/images/2022/03/IMG_2457-scaled-e1648571947569.jpg",
+        "/assets/images/2022/03/IMG_2435-scaled.jpg"
+      ],
+      "sourceHash": "6b42b18ca9c3c0f6108ae1ad463715e918e91bb1468f5c7c959686b0a016a3cf"
+    }
+  ],
+  "services": [
+    {
+      "id": "spaces",
+      "title": "Spaces that<br>stand out.",
+      "name": "Storefronts & Trade Show Booths",
+      "image": "/assets/images/2021/12/IMG_1097.jpg",
+      "list": [
+        "Building Wraps",
+        "Storefront Graphics",
+        "Trade-show Booth Graphics",
+        "Window Perforation"
+      ]
+    },
+    {
+      "id": "vehicle-wraps",
+      "title": "Your brand.<br>In motion.",
+      "name": "Fleet & Custom Vehicle Wraps",
+      "image": "/assets/images/2021/12/IMG_0907.jpg",
+      "list": [
+        "Vehicle Wraps",
+        "Fleet Graphics",
+        "Trailer / RV Wraps",
+        "All Vehicle Types"
+      ]
+    },
+    {
+      "id": "print",
+      "title": "Ideas, made<br>tangible.",
+      "name": "Decals, Banners & Canvas",
+      "image": "/assets/images/2021/12/IMG_0877.jpg",
+      "list": [
+        "Printed Decals (High and Low Quantities)",
+        "Die-Cut Decals (High and Low Quantities)",
+        "Printed Banners",
+        "Printed Canvas"
+      ]
+    },
+    {
+      "id": "window-tint",
+      "title": "A clearer kind<br>of comfort.",
+      "name": "Window Tint",
+      "image": "/assets/images/2023/03/Tint_Web-Photo.jpg",
+      "list": [
+        "3M Crystalline Series",
+        "3M Ceramic IR Series",
+        "3M Obsidian Series"
+      ]
+    }
+  ]
+}

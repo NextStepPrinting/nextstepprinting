@@ -1,28 +1,30 @@
 # Next Step Printing
 
-Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to static HTML with Cloudflare Pages Functions and Resend. All 15 publicly linked pages are recreated. **The owner-created Pages review copy is live; real email delivery needs configuration.** See [migration status](docs/migration-status.md) for evidence and remaining checks.
+> **Experimental redesign branch:** `feature/modern-redesign` contains a separate, owner-authorized modern design for all 15 pages. The approved production site remains on `main`. See [the redesign review guide](docs/redesign.md) for the design direction, local preview, preserved functionality, checks, and rollback workflow. Nothing on this branch has been deployed.
 
-The owner-approved Contact page and shared footer follow the supplied mockup, using Footer Option B. Navigation starts in the same compact 60px state across the site. Preview locally at `http://127.0.0.1:4173/contact/` with `npm run dev` or the Windows helper below.
+Faithful migration of [nextstepprinting.com](https://nextstepprinting.com/) to static HTML with Cloudflare Pages Functions and Resend. All 15 publicly linked pages are recreated. **The approved site is live on `main`; the owner has configured Resend and confirmed both forms work.** See [migration status](docs/migration-status.md) for evidence and remaining checks.
+
+The approved `main` design uses the Contact/footer mockup and compact navigation. This experimental branch replaces the site presentation with the modern design documented above. Preview the experiment at `http://127.0.0.1:4173/` with `npm run dev` or the Windows helper below.
 
 ## Editing in VS Code
 
 - `public/index.html`: home page.
 - `public/about/`, `services/`, `graphic-design/`, `our-work/`, `get-a-quote/`, `contact/`: business pages; edit each folder's `index.html`.
 - `public/portfolio/<original-slug>/index.html`: eight portfolio pages.
-- `public/assets/styles/site.css`: independent header, controls, responsive adjustments, and form states.
+- `public/assets/styles/redesign.css`: active experimental design, header, responsive layouts, controls, and form states. `site.css` is retained as the approved-design reference.
 - `public/assets/site.js`: menu, carousel, gallery dialog, sorting/sharing, and form behavior.
 - `public/assets/images/YYYY/MM/`: original images and responsive derivatives, with original filenames.
 - `public/assets/fonts/`: local Montserrat and original icon fonts.
-- `public/assets/styles/*-layout.css`: original page-specific layouts. [Page inventory](docs/page-inventory.json) maps routes to styles; other captured CSS supplies original grid, typography, and components.
+- `public/assets/styles/*-layout.css`: original layouts retained for provenance; not loaded by this redesign. [Page inventory](docs/page-inventory.json) records the migration capture.
 - `functions/api/quote.js`, `functions/api/contact.js`: quote/contact Pages Functions.
 - `functions/_lib/message.js`: shared server-side validation, Turnstile verification, and Resend delivery.
-- `functions/api/form-config.js`: exposes only the public captcha site key when delivery is configured.
+- `functions/api/form-config.js`: exposes the public captcha site key and delivery-readiness boolean, never secrets.
 
-Edit `public/`, not generated `dist/`. Text, images, and links are directly editable HTML. Headers/footers are currently repeated across pages, so shared changes require updating all 15 files. The compact footer is the semantic `.nsp-footer` block; its styles and the Contact redesign are scoped in `site.css`. Original visual class names remain elsewhere for fidelity. Captured CSS is standalone: WordPress, PHP, jQuery, the original host, and theme scripts are not required. Retain third-party license notices.
+Edit `public/`, not generated `dist/`. Text, images, and links are directly editable HTML. Headers/footers are currently repeated across pages, so shared changes require updating all 15 files. The footer is the semantic `.nsp-footer` block; active styles are in `redesign.css`. New semantic markup replaces theme wrapper structures. WordPress, PHP, jQuery, the original host, and theme styles/scripts are not required. Retain third-party license notices.
 
-Our Work uses a small masonry routine in `site.js`; its columns and animated positioning are styled in `site.css`. Original hover effects remain in the captured layout/component CSS. Small hover feedback remains enabled with reduced-motion preferences, while spatial transitions are shorter and automatic carousel movement is suppressed. Window scrolling stays native.
+Our Work retains the masonry/sorting routine in `site.js`, styled in `redesign.css`. All project photographs retain their original image links. CSS transitions respect reduced-motion preferences, there is no automatic carousel, and window scrolling stays native.
 
-The image viewer has a transparent stage over a dark backdrop, circular chevrons fixed to the viewer's side rails, a top-right X, and keyboard navigation. Arrows stay at the same screen position between photos. Its style is in the `.nsp-lightbox` rules in `site.css`.
+The image viewer has a transparent stage over a dark backdrop, circular chevrons fixed to the viewer's side rails, a top-right X, and keyboard navigation. Arrows stay at the same screen position between photos. Its active style is in the `.nsp-lightbox` rules in `redesign.css`.
 
 Navigation shows all seven links on one row from 1100px upward and an orange overlay with bold white text below that width. Compact-menu hover/focus draws an underline outward from the center without a background highlight. Keep the breakpoint synchronized between `site.css` and the `wideMenu` query in `site.js`. Mode changes restore the menu's scroll lock without disturbing an open image viewer. The shared copyright line ends at “All rights reserved” without a trailing period.
 
@@ -65,9 +67,9 @@ The build only copies `public/` to `dist/`, keeping documentation/tests outside 
 | Compatibility date | `2026-10-27` |
 | Node compatibility flag | Not needed; Functions use web APIs |
 | Function routes | `/api/*`, from `public/_routes.json` |
-| Production branch | Pending owner decision after review |
+| Production branch | `main`; this experiment remains on `feature/modern-redesign` |
 
-The owner has connected a Pages review site. Further deployments and DNS changes require authorization; pushing a connected branch can automatically deploy. `migration-base` is an empty review base, not production. `feature/website-migration` is the working branch and was selected in the owner's Pages setup screen. Original page paths are retained; no page redirects are needed. Pages supplies normal directory/index URL handling.
+The owner has connected a Pages review site. Further deployments and DNS changes require authorization; pushing a connected branch can automatically deploy. `migration-base` is an empty review base, not production. `main` is now the production branch. `feature/website-migration` is fully contained in main and retained as history; `feature/modern-redesign` is the separate design experiment. Original page paths are retained; no page redirects are needed. Pages supplies normal directory/index URL handling.
 
 References: [static HTML](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/), [Functions development](https://developers.cloudflare.com/pages/functions/local-development/), and [bindings/secrets](https://developers.cloudflare.com/pages/functions/bindings/).
 
@@ -87,7 +89,7 @@ Configure separately for each approved preview/production environment:
 
 The public business email `info@nextstepprinting.com` is preserved in visible links, but is **not assumed as recipient or verified sender**. No other project's credentials are reused. Do not put secrets in Git or chat. Restrict Turnstile to actual approved hostnames; the shared handler checks hostname and the route-specific `quote` or `contact` action. Both forms use the configured business inbox; a different Contact destination would need an explicit routing change.
 
-The existing widget's public site key is `0x4AAAAAAFo4dXCxF6ZlPYBa`, stored in `functions/_lib/turnstile.js`; it does not need a Pages variable. The owner confirmed its matching secret is already stored in Pages as `TURNSTILE_SECRET_KEY`, and explicitly confirmed **Resend is not set up yet**. No widget was created/replaced or secret retrieved. The integration follows [Spin's existing-widget flow](https://developers.cloudflare.com/turnstile/spin/prompt.md) using the existing Pages secret destination. Widget rendering is independent of email readiness; `/api/form-config` exposes only the public key and a boolean `ready`. Incomplete sending configuration fails closed. Hostname validation uses an explicit allowlist and excludes localhost from production. Keep `nextstepprinting.pages.dev` in the widget's allowed hostnames. Add future approved production hosts in both the widget and `TURNSTILE_HOSTNAMES` before domain cutover.
+The existing widget's public site key is `0x4AAAAAAFo4dXCxF6ZlPYBa`, stored in `functions/_lib/turnstile.js`; it does not need a Pages variable. The owner confirmed its matching secret is already stored in Pages as `TURNSTILE_SECRET_KEY`, and has now configured Resend and confirmed both production forms work. No widget was created/replaced or secret retrieved. The integration follows [Spin's existing-widget flow](https://developers.cloudflare.com/turnstile/spin/prompt.md) using the existing Pages secret destination. Widget rendering is independent of email readiness; `/api/form-config` exposes only the public key and a boolean `ready`. Incomplete sending configuration fails closed. Hostname validation uses an explicit allowlist and excludes localhost from production. Keep `nextstepprinting.pages.dev` in the widget's allowed hostnames. Add future approved production hosts in both the widget and `TURNSTILE_HOSTNAMES` before domain cutover.
 
 Turnstile renders explicitly per form with `quote`/`contact` actions, expires/errors visibly, resets after every submission attempt, and switches to compact display when space is narrow. Backend acceptance requires `success === true`, the expected action, and the exact approved request hostname. Mocks cover replay rejection; real successful submission/replay remains pending separate email-test authorization.
 

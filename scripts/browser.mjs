@@ -2,7 +2,7 @@ import {spawn} from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 export async function browser(port=9333) {
-  const child = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new','--disable-gpu','--no-first-run',`--remote-debugging-port=${port}`,`--user-data-dir=${path.resolve('.preview/edge-'+port)}`],{stdio:'ignore'});
+  const child = spawn('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', ['--headless=new','--disable-gpu','--no-first-run','--disable-extensions','--disable-sync',`--remote-debugging-port=${port}`,`--user-data-dir=${path.resolve('.preview/edge-'+port)}`],{stdio:'ignore'});
   let info;
   for(let i=0;i<60;i++) { try {info = await (await fetch(`http://127.0.0.1:${port}/json/new?about:blank`,{method:'PUT'})).json();break;} catch {await new Promise(r=>setTimeout(r,250));} }
   if(!info) throw new Error('Browser debugging endpoint unavailable');
