@@ -407,7 +407,16 @@ h2{font-size:38px}
 .nsp-lightbox [data-prev]{left:4px}
 .nsp-lightbox [data-next]{right:4px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+/* Reduced motion retains hover feedback without animated scaling or movement. */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition-property:color,background-color,border-color,box-shadow,opacity!important;
+    transition-duration:.18s!important;
+    transition-delay:0s!important;
+  }
+  .home-hero-photo:hover>img{opacity:.92;transform:none}
+  .project-photo:hover>img,.text-link:hover svg,.service-row:hover>svg{transform:none}
 }
 /* Graphic Design: portfolio-led layout using the original project photographs. */
 .nsp-design-intro h2 { margin:0 0 20px; font:700 clamp(32px,3.5vw,48px)/1.12 Montserrat,Arial,sans-serif; letter-spacing:-.04em; color:#171819; }
