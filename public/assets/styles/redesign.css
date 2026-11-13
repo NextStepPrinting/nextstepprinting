@@ -59,7 +59,7 @@ ul{padding:0;margin:0;list-style:none}
 .home-hero-copy>p:not(.eyebrow){font-size:15px;line-height:1.85;color:var(--muted)}
 .hero-dealer{display:none;width:280px;max-width:100%;margin-bottom:24px}
 .home-hero-visual{position:relative;min-width:0}
-.hero-dealer-overlay{position:absolute;top:28px;left:28px;width:clamp(180px,42%,280px);max-width:calc(100% - 56px);pointer-events:none}
+.hero-dealer-overlay{position:absolute;top:28px;left:28px;width:clamp(180px,42%,250px);max-width:calc(100% - 56px);pointer-events:none}
 .hero-dealer-overlay img{width:100%;height:auto}
 .hero-dealer img{width:100%;height:auto}
 .hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}
